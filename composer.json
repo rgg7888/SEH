@@ -9,6 +9,8 @@
       "src/helpers.php"
     ]
   },
+  "minimum-stability": "dev",
+  "license": "MIT",
   "require-dev": {
     "phpunit/phpunit": "^9.3"
   }
