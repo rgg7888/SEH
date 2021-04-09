@@ -6,6 +6,9 @@ razon decides echarle un vistazo a este codigo
 y empiezas a probarlo hasta el momento te toparas 
 con varias cosas por hacer 
 
+ALERTA ESTE TEXTO TIENE FALTAS DE ORTOGRAFIA,
+CONSIDERE CORREGIRLO PARA PROPOSITOS PROFECIONALES !!!!
+
 1- Aun no tiene todas las propiedades css implementadas
 
 ##################################
