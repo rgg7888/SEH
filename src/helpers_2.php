@@ -27,3 +27,10 @@ if(!function_exists('bodyt')) {
         return $body->tag();
     }
 }
+
+if(!function_exists('divt')) {
+    function divt (string|array|null $args = null, string|array|null $func = null) {
+        $div = new App\Div($args, $func);
+        return $div->tag();
+    }
+}
