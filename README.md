@@ -339,3 +339,21 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     para ver los atributos de las etiquetas anteriores 
     entre ala carpeta src y seleccione la clase que 
     quiera estudiar
+
+#SELECTORES Y VARIABLES CSS
+
+    tenemos dos funciones mas
+    la funcion vars() y la funcion sltr()
+
+    para la funcion sltr() colocamos como primer
+    arguento el selector css y como segundo parametro
+    le pasamos las propiedades css mediante un arreglo
+
+    para ver la lista de propiedades disponibles vaya a 
+    la clase Selector y observe ahi la lista, para ampliar
+    esta lista y funcionalidades vulva a arriba de este 
+    documento y lea las opciones propuestas ahi.
+
+    la funcion vars() recibe un arreglo del tipo key => value
+    donde el key es el nombre de la variable y el value
+    sera el valor que tomara esa variable.
