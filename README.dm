@@ -125,10 +125,10 @@ asi :
 echo $doctype->tag();
 echo $html->tag();
 
-AHORA CON helpers_2 ES MAS SENCILLO 
+AHORA CON helpersES MAS SENCILLO 
 Y NOS AHORRAMOS ALGUNAS SENTENCIAS 
 DE ESTA FORMA utilizando las funciones 
-identificadas con una t al final :
+de esta forma :
 
 doctype("H");
 html("Len",[
