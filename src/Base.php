@@ -17,8 +17,8 @@ class Base {
         $this->args = $args;
     }
 
-    public function clean(string $cadena){
-        return str_replace("_"," ",$cadena);
+    public function clean(string $cadena, string $separador = "_"){
+        return str_replace($separador," ",$cadena);
     }
 
     public function setFunc(string|array $func){
