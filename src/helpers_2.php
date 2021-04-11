@@ -34,3 +34,10 @@ if(!function_exists('divt')) {
         return $div->tag();
     }
 }
+
+if(!function_exists('addresst')) {
+    function addresst (string|array|null $args = null, string|array|null $func = null) {
+        $address = new App\Address($args, $func);
+        return $address->tag();
+    }
+}
