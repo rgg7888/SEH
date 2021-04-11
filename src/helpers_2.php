@@ -55,3 +55,10 @@ if(!function_exists('hdrt')) {
         return $header->tag();
     }
 }
+
+if(!function_exists('maint')) {
+    function maint (string|array|null $args = null, string|array|null $func = null) {
+        $main = new App\Main($args, $func);
+        return $main->tag();
+    }
+}
