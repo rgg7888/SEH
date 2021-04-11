@@ -1,7 +1,7 @@
 <?php
 
 if(!function_exists('doctype')) {
-    function doctype (string|array|null $args = null) {
+    function doctype (string|array|null $args = "H") {
         $doctype = new App\Doctype($args);
         echo $doctype->tag();
     }
