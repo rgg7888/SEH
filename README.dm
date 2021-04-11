@@ -75,3 +75,71 @@ implementar o utilizar otras librerias o frameworks usted mismo/a.
 entre a el repo en github o al instalar seh con composer 
 entre ala carpeta vendor y busque el archivo index.php que se encuentra ahi 
 para ver la forma en la que se estructura una pagina web utilizando php.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+<pre>
+HOLA CON helpers_2 ahora no es necesario 
+hacer esto 
+
+$doctype = doctype("H);
+
+y despues 
+
+echo $doctype->tag();
+
+ahora simplemente llama a la funcion 
+
+doc("H");
+
+y el resultado sera el mismo sin variable 
+y sin echo adicionales
+
+tambien tenemos la funcion htm() la cual puede 
+utilizar alternativamente ala funcion html()
+
+
+anteriormente una estructura basica con las funciones
+del archivo helpers seria algo asi :
+
+$doctype = doctype("H");
+$html = html("Len");
+$head = head();
+$body = body();
+
+y para agregar el head y el body dentro de html seria 
+de alguna de esta forma :
+
+$html->setContent([
+    $head->tag(),
+    $body->tag()
+]);
+
+O tambien al instaciar la etiqueta asi :
+
+$html = html("Len",[
+    $head->tag(),
+    $body->tag()
+]);
+
+y finalmente imprimiriamos el doctype y la estructura 
+asi :
+
+echo $doctype->tag();
+echo $html->tag();
+
+AHORA CON helpers_2 ES MAS SENCILLO 
+Y NOS AHORRAMOS ALGUNAS SENTENCIAS 
+DE ESTA FORMA utilizando las funciones 
+identificadas con una t al final :
+
+doc("H");
+htm("Len",[
+    headt(),
+    bodyt()
+]);
+
+y como puede observar el codigo se reduce 
+y se lee mejor.
+
+</pre>
