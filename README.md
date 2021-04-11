@@ -248,7 +248,7 @@ la funcion a() es similar a las anteriores
     entonces como le hacemos para pasar de index.php
     a info.php con un click ?
 
-    es sencillo , para hacer eso podemos llamar ala funcion a dentro de index.php de esta manera :
+    es sencillo , para hacer eso podemos llamar ala funcion a() dentro de index.php de esta manera :
 
     a("Hinfo.php","ir a informacion"); 
 
