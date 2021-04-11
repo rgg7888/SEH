@@ -161,6 +161,13 @@ if(!function_exists('script')) {
     }
 }
 
+if(!function_exists('table')) {
+    function table (string|array|null $args = null, string|array|null $func = null) {
+        $table = new App\Table($args, $func);
+        return $table->tag();
+    }
+}
+
 if(!function_exists('changeContentOf')) {
     function changeContentOf (string $elementId, string $fileName) {
         $changeContent = new App\JsFuncMaker("loadDoc");
