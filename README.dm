@@ -139,4 +139,8 @@ html("Len",[
 y como puede observar el codigo se reduce 
 y se lee mejor.
 
+para los selectores y variables era necesario utilizar 
+el metodo create , ahora al igual que las funciones 
+html solo se llama al helper y nada mas.
+
 </pre>
