@@ -254,7 +254,7 @@ la funcion a() es similar a las anteriores
 
     como puedes notar en este caso le pasamos
     como argumento otro string en vez de un arreglo
-    tambien puedes pasarle un arreglo ala etiqueta a
+    tambien puedes pasarle un arreglo ala etiqueta a()
     pero como solo necesite un texto no es necesario
     solo con pasarle el string con el texto que 
     queremos visualizar es suficiente
