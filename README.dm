@@ -155,3 +155,25 @@ primeramente la funcion doctype();
     este readme probablemente pasarle el argumento H deje de ser necesario.
 
     eso es todo no hay mas que explicar sobre esta funcion solo la llamas y listo.
+
+la funcion html();
+    esta funcion recibe un string y un arreglo por parametros
+
+    html("string",[
+
+    ]);
+
+    el string se compone de dos partes atributo/valor
+    en este caso el unico atributo disponible se representa con 
+    la letra L por lang y el valor puede ser : es, en , etc. dependiendo
+    del idioma del contenido de la pagina entonces quedaria asi :
+
+    html("Les",[]);
+
+    en este caso Les para indicar que el contenido sera en spanish
+
+siempre al iniciar un proyecto las primeras dos funciones que llamaremos
+seran doctype y html asi :
+
+    doctype("H");
+    html("Les",[]);
