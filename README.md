@@ -196,3 +196,31 @@ la funcion head() esta es la etiqueta en la que se definen
     html("Les",[
         head(null,[])
     ]);
+
+la funcion body() esta funcion es la siguiente en
+    entrar dentro de html, esta funcion al igual
+    que la funcion html recibe tambien un string y
+    un arreglo, el estring representa igual un par 
+    de elementos atributo/valor , para esta etiqueta
+    tenemos disponibles los atributos C por class e I por id.
+
+    alternativamente se le puede pasar null en caso de no 
+    necesitar de estos atributos, entonces si queremos 
+    simplemente el tag body sin atributos llamamos a la 
+    funcion body asi : body(null,[]);
+
+    la etiqueta body con una clase se define asi : body("CmyClass",[]);
+
+    la etiqueta body con un id se define asi : body("ImyId",[]);
+
+    tambien podemos agregarle ambos atributos asi : body("CmyClass ImyId",[]);
+
+    el orden no importa asi que tambien seria valido esto body("ImyId CmyClass",[]);
+
+    finalmente agregamos el body del documento asi:
+
+    doctype("H");
+    html("Les",[
+        head(null,[]),
+        body("",[])
+    ]);
