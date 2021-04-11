@@ -265,8 +265,8 @@ if(!function_exists('sltr')) {
 #clean function 
 
 if(!function_exists('cls')) {
-    function cls (string $cadena) {
+    function cls (string $cadena, string $separador = "_") {
         $clean = new App\Base();
-        return $clean->clean($cadena);
+        return $clean->clean($cadena, $separador);
     }
 }
