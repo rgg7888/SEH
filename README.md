@@ -261,3 +261,17 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     por lo anterior al utilizar la etiqueta img le recomiendo reemplazar
     los espacios de la cadena del atributo alt por guiones bajos u otro 
     caracter que usted prefiera o bien implementar la descripcion con camelCase.
+
+######### Parches #########
+
+    4/11/2021 :
+
+    si quiere mantener los espacios en alguna descripcion o es muy necesario
+    tener espacios en alguna propiedad como puede darse el caso en el atributo rel="shortcut icon"
+
+    puede utilizar el parche , con la funcion cls()
+    primeramente tendra que reemplazar el espacio con un _ asi :
+    lk("Rshortcut_icon");
+    y la funcion lk tendra que encerrarla dentro de la funcion cls()
+    de esta forma : cls(lk("Rshortcut_icon")); asi al imprimirse
+    los _ se reemplazaran de nuevo con espacios.
