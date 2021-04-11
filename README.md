@@ -247,12 +247,12 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
 
     2- Los espacios 
 
-    en algunas etiquetas especifcamente hablando de la etiqueta img ,
+    en algunas etiquetas especifcamente hablando de la etiqueta img() ,
     hasta este punto es la unica etiqueta que recuerdo con la que he
     tenido este inconveniente y es que en su atributo alt 
     se le coloca una cadena de caracteres la cual puede contener espacios 
 
-    el problema es que el metodo createOpenTag utiliza la funcion implode 
+    el problema es que el metodo createOpenTag() utiliza la funcion implode 
     para tomar al espacio como separador , entonces cuando usted 
     le pase una cadena con espacios la funcion tomara todos y cada uno 
     de esos espacios como una propiedad diferente lo cual se traducira a una 
