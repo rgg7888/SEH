@@ -293,3 +293,17 @@ la funcion button()
     ejemplo de un boton :
 
     button("OhiFunction()","click me");
+
+la etiqueta script()
+    esta etiqueta tiene dos funciones pricipales
+    nos permite escribir codigo javaScript en su interior
+    o nos permite incluir un archivo con extension .js
+    e incluirlo a nuestro documento html
+
+    para llamar a un archivo externo se utiliza
+    el atributo src de esta forma script("Sfile.js");
+
+    o bien podemos omitir el atributo src y escribir
+    codigo javascript dentro de la funcion script asi :
+
+    script(null,"your js code here");
