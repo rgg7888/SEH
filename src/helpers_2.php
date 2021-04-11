@@ -62,3 +62,10 @@ if(!function_exists('maint')) {
         return $main->tag();
     }
 }
+
+if(!function_exists('sectiont')) {
+    function sectiont (string|array|null $args = null, string|array|null $func = null) {
+        $section = new App\Section($args, $func);
+        return $section->tag();
+    }
+}
