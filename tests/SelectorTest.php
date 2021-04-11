@@ -8,9 +8,9 @@ class SelectorTest extends TestCase
     public function test_create_a_selector()
     {
         $selector = new Selector("*",[
-            "Bborder-box",
-            "M0",
-            "P0"
+            "0border-box",
+            "10",
+            "20"
         ]);
 
         $this->assertEquals("*{box-sizing: border-box;margin: 0;padding: 0;}", $selector->create());
