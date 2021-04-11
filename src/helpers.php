@@ -210,6 +210,15 @@ if(!function_exists('tfoot')) {
     }
 }
 
+if(!function_exists('b')) {
+    function b (string|array|null $args = null, string|array|null $func = null) {
+        $b = new App\B($args, $func);
+        return $b->tag();
+    }
+}
+
+#javascript functions
+
 if(!function_exists('changeContentOf')) {
     function changeContentOf (string $elementId, string $fileName) {
         $changeContent = new App\JsFuncMaker("loadDoc");
