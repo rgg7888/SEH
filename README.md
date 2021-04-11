@@ -325,7 +325,17 @@ ahora hablemos sobre el objeto jfm();
     $object->abrir("xhttp","GET","file.txt","true");
     $object->enviar();
 
+#SELF CLOSING TAGS
 
+POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
 
+    img() meta() lk()
 
+    pero usted puede implementar las etiquetas que le hagan
+    falta creando la clase correspondiente y heredando los 
+    metodos de la clase Base , tome alguna de estas clases
+    como referencia
 
+    para ver los atributos de las etiquetas anteriores 
+    entre ala carpeta src y seleccione la clase que 
+    quiera estudiar
