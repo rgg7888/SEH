@@ -224,3 +224,11 @@ la funcion body() esta funcion es la siguiente en
         head(null,[]),
         body("",[])
     ]);
+
+las funciones div() address() title() hdr()
+    main() section() footer() style() p()
+    h1() h2() h3() h4() h5() h6() span()
+
+    tienen los mismo atributos que body
+    tambien reciben un arreglo por segundo
+    parametro y se agregan al documento de la misma forma
