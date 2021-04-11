@@ -168,6 +168,20 @@ if(!function_exists('table')) {
     }
 }
 
+if(!function_exists('tr')) {
+    function tr (string|array|null $args = null, string|array|null $func = null) {
+        $tr = new App\Tr($args, $func);
+        return $tr->tag();
+    }
+}
+
+if(!function_exists('td')) {
+    function td (string|array|null $args = null, string|array|null $func = null) {
+        $td = new App\Td($args, $func);
+        return $td->tag();
+    }
+}
+
 if(!function_exists('changeContentOf')) {
     function changeContentOf (string $elementId, string $fileName) {
         $changeContent = new App\JsFuncMaker("loadDoc");
