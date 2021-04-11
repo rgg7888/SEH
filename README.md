@@ -316,7 +316,7 @@ ahora hablemos sobre el objeto jfm();
     entonces para hacer lo anterior la implementacion
     quedaria de esta forma :
 
-    $object = jsm();
+    $object = jfm();
     $object->httpObject("xhttp");
     $object->ors("xhttp",si(
         "this.readyState == 4 && this.status == 200",
