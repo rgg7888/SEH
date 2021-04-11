@@ -182,6 +182,34 @@ if(!function_exists('td')) {
     }
 }
 
+if(!function_exists('th')) {
+    function th (string|array|null $args = null, string|array|null $func = null) {
+        $th = new App\Th($args, $func);
+        return $th->tag();
+    }
+}
+
+if(!function_exists('thead')) {
+    function thead (string|array|null $args = null, string|array|null $func = null) {
+        $thead = new App\Thead($args, $func);
+        return $thead->tag();
+    }
+}
+
+if(!function_exists('tbody')) {
+    function tbody (string|array|null $args = null, string|array|null $func = null) {
+        $tbody = new App\Tbody($args, $func);
+        return $tbody->tag();
+    }
+}
+
+if(!function_exists('tfoot')) {
+    function tfoot (string|array|null $args = null, string|array|null $func = null) {
+        $tfoot = new App\Tfoot($args, $func);
+        return $tfoot->tag();
+    }
+}
+
 if(!function_exists('changeContentOf')) {
     function changeContentOf (string $elementId, string $fileName) {
         $changeContent = new App\JsFuncMaker("loadDoc");
