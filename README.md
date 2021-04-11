@@ -232,3 +232,32 @@ las funciones div() address() title() hdr()
     tienen los mismo atributos que body
     tambien reciben un arreglo por segundo
     parametro y se agregan al documento de la misma forma
+
+la funcion a() es similar a las anteriores 
+    pero esta etiqueta tiene una habilidad 
+    especial , te permite enlazar documentos
+
+    esta etiqueta tiene por atributos C por class
+    I por id y H por href , el atributo href
+    es en donde se le coloca el nombre o direccion
+    del documento al que queremos acceder por ejemplo :
+
+    supongamos que tenemos un archivo llamado index.php
+    y tenemos otro archivo llamado info.php
+
+    entonces como le hacemos para pasar de index.php
+    a info.php con un click ?
+
+    es sencillo , para hacer eso podemos llamar ala funcion a dentro de index.php de esta manera :
+
+    a("Hinfo.php","ir a informacion"); 
+
+    como puedes notar en este caso le pasamos
+    como argumento otro string en vez de un arreglo
+    tambien puedes pasarle un arreglo ala etiqueta a
+    pero como solo necesite un texto no es necesario
+    solo con pasarle el string con el texto que 
+    queremos visualizar es suficiente
+
+    las etiquetas mencionadas anteriormente a la funcion 
+    a() tambien pueden recibir como argumento un string
