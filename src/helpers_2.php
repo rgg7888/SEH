@@ -83,3 +83,10 @@ if(!function_exists('stylet')) {
         return $style->tag();
     }
 }
+
+if(!function_exists('pt')) {
+    function pt (string|array|null $args = null, string|array|null $func = null) {
+        $p = new App\P($args, $func);
+        return $p->tag();
+    }
+}
