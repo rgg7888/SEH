@@ -177,3 +177,22 @@ seran doctype y html asi :
 
     doctype("H");
     html("Les",[]);
+
+la funcion head() esta es la etiqueta en la que se definen
+    estilos css, meta etiquetas como el viewport, charset, etc.
+    y esta es la primer etiqueta que se define dentro del documento html
+    y lo unico que debemos hacer es llamar a la funcion de la siguiente manera :
+
+    head(null,[]);
+
+    el primer parametro tiene que ser null porque esta estiqueta por lo regular no 
+    se le suele agregar atributos , esta implementacion es temporal y puede cambiar
+    sin previo aviso porque este projecto esta en desarrollo, y sometido a pruebas
+    todos los dias por lo tanto aun no es un proyecto estable , lo que si es seguro
+    es que en un momento a otro la implementacion no necesitara el paramentro null
+    pero por el momento la funcion se agrega al documento de la siguiente forma :
+
+    doctype("H");
+    html("Les",[
+        head(null,[])
+    ]);
