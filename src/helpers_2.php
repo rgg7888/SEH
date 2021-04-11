@@ -69,3 +69,10 @@ if(!function_exists('sectiont')) {
         return $section->tag();
     }
 }
+
+if(!function_exists('footert')) {
+    function footert (string|array|null $args = null, string|array|null $func = null) {
+        $footer = new App\Footer($args, $func);
+        return $footer->tag();
+    }
+}
