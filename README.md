@@ -169,9 +169,9 @@ ahora hablemos sobre el objeto jfm();
 
     $object = jfm();
     $object->httpObject("xhttp");
-    $object->ors("xhttp",si(
+    $object->ors("xhttp",$object->si(
         "this.readyState == 4 && this.status == 200",
-        ihr("demo")
+        $object->ihr("demo")
     ));
     $object->abrir("xhttp","GET","file.txt","true");
     $object->enviar();
