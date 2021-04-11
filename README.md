@@ -207,21 +207,12 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     donde el key es el nombre de la variable y el value
     sera el valor que tomara esa variable.
 
-    #
-    hola soy yo de nuevo , un completo desconocido 
-    compartiendo codigo en php.
-
-    solamente quiero mensionar si por alguna estraña
-    razon decides echarle un vistazo a este codigo 
-    y empiezas a probarlo hasta el momento te toparas 
-    con varias cosas por hacer 
-
-    ALERTA ESTE TEXTO TIENE FALTAS DE ORTOGRAFIA,
-    CONSIDERE CORREGIRLO PARA PROPOSITOS PROFECIONALES !!!!
+#A TOMAR EN CUENTA
 
     1- Aun no tiene todas las propiedades css implementadas
 
 ##################################
+
     la razon de esto es que en la clase selector tenemos una 
     lista limitada la cual puede ir aumentando segun tus necesidades.
 
@@ -235,6 +226,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     sola letra por propiedad sin repetir.
 
 ###################################
+
     las posibles soluciones que se me ocurren son las siguientes:
     1- puedes agregar letras en minuscula la cual te da un tamaño
     del doble del alfabeto para seguir agregando mas propiedades.
@@ -251,7 +243,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     nueva clase que herede los metodos de la clase anterior y sobre escribir 
     la lista para nuevas propiedades.
 
-&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
     2- Los espacios 
 
@@ -269,89 +261,3 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     por lo anterior al utilizar la etiqueta img le recomiendo reemplazar
     los espacios de la cadena del atributo alt por guiones bajos u otro 
     caracter que usted prefiera o bien implementar la descripcion con camelCase.
-
-############################################################3
-
-    AHORA LO QUE USTED PUEDE CREAR CON "SEH"
-
-    son instancias de de etiquetas html , selectores, variables y propiedaades css, 
-    y tambien puede hacer llamadas http utilizando JsFuncMaker, una clase que implementa 
-    a el objeto "var xhttp = new XMLHttpRequest()" en su forma mas basica, por lo tanto 
-    no espere tener todo lo que necesita para su trabajo ya implementado , para eso tendra que 
-    implementar o utilizar otras librerias o frameworks usted mismo/a.
-
-###########################
-
-    entre a el repo en github o al instalar seh con composer 
-    entre ala carpeta vendor y busque el archivo index.php que se encuentra ahi 
-    para ver la forma en la que se estructura una pagina web utilizando php.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-    <pre>
-    HOLA CON helpers_2 ahora no es necesario 
-    hacer esto 
-
-    $doctype = doctype("H);
-
-    y despues 
-
-    echo $doctype->tag();
-
-    ahora simplemente llama a la funcion 
-
-    doctype("H");
-
-    y el resultado sera el mismo sin variable 
-    y sin echo adicionales
-
-
-    anteriormente una estructura basica con las funciones
-    del archivo helpers seria algo asi :
-
-    $doctype = doctype("H");
-    $html = html("Len");
-    $head = head();
-    $body = body();
-
-    y para agregar el head y el body dentro de html seria 
-    de alguna de esta forma :
-
-    $html->setContent([
-        $head->tag(),
-        $body->tag()
-    ]);
-
-    O tambien al instaciar la etiqueta asi :
-
-    $html = html("Len",[
-        $head->tag(),
-        $body->tag()
-    ]);
-
-    y finalmente imprimiriamos el doctype y la estructura 
-    asi :
-
-    echo $doctype->tag();
-    echo $html->tag();
-
-    AHORA CON helpersES MAS SENCILLO 
-    Y NOS AHORRAMOS ALGUNAS SENTENCIAS 
-    DE ESTA FORMA utilizando las funciones 
-    de esta forma :
-
-    doctype("H");
-    html("Len",[
-        head(),
-        body()
-    ]);
-
-    y como puede observar el codigo se reduce 
-    y se lee mejor.
-
-    para los selectores y variables era necesario utilizar 
-    el metodo create , ahora al igual que las funciones 
-    html solo se llama al helper y nada mas.
-
-    </pre>
-#
