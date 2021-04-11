@@ -308,7 +308,7 @@ la etiqueta script()
 
     script(null,"your js code here");
 
-ahora hablemos sobre el objeto jsm();
+ahora hablemos sobre el objeto jfm();
     esta clase nace espesificamente para 
     reemplazar el contenido de una etiqueta html
     por otro utilizando ajax
