@@ -90,13 +90,10 @@ echo $doctype->tag();
 
 ahora simplemente llama a la funcion 
 
-doc("H");
+doctype("H");
 
 y el resultado sera el mismo sin variable 
 y sin echo adicionales
-
-tambien tenemos la funcion htm() la cual puede 
-utilizar alternativamente ala funcion html()
 
 
 anteriormente una estructura basica con las funciones
@@ -133,10 +130,10 @@ Y NOS AHORRAMOS ALGUNAS SENTENCIAS
 DE ESTA FORMA utilizando las funciones 
 identificadas con una t al final :
 
-doc("H");
-htm("Len",[
-    headt(),
-    bodyt()
+doctype("H");
+html("Len",[
+    head(),
+    body()
 ]);
 
 y como puede observar el codigo se reduce 
