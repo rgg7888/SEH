@@ -261,3 +261,35 @@ la funcion a() es similar a las anteriores
 
     las etiquetas mencionadas anteriormente a la funcion 
     a() tambien pueden recibir como argumento un string
+
+la funcion button()
+    esta funcion como su nombre sugiere nos sirve
+    para crear botones, tiene el mismo funcionamiento
+    y se llama igualmente como lo hemos hecho con 
+    anterioridad, la diferencia que esta etiqueta 
+    tiene a las anteriores es un par de atributos
+    los cuales le permiten hacer funciones 
+    especificas de un boton
+
+    para los botones tenemos los aributos :
+
+    C para class , I para id , T para type y 
+    O para onclick
+
+    existen mas atributos para todas las etiquetas
+    html sin embargo yo te muestro las que utilizaras
+    con mas frecuencia, el atributo type por ejemplo
+    nos ayuda a definir el tipo de boton 
+
+    (button|submit|reset)
+
+    en cambio el atributo onclick hace referencia a un 
+    evento, es decir cuando ocurra algo por ejemplo 
+    que se le de click a un boton el atributo onclick
+    sera igual al nombre de una funcion por lo regular
+    escrita en javascript la cual ejecutara una serie de
+    pasos cuando el evento click ocurra
+
+    ejemplo de un boton :
+
+    button("OhiFunction()","click me");
