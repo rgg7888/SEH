@@ -41,3 +41,10 @@ if(!function_exists('addresst')) {
         return $address->tag();
     }
 }
+
+if(!function_exists('titlet')) {
+    function titlet (string|array|null $args = null, string|array|null $func = null) {
+        $title = new App\Title($args, $func);
+        return $title->tag();
+    }
+}
