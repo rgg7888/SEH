@@ -76,3 +76,10 @@ if(!function_exists('footert')) {
         return $footer->tag();
     }
 }
+
+if(!function_exists('stylet')) {
+    function stylet (string|array|null $args = null, string|array|null $func = null) {
+        $style = new App\Style($args, $func);
+        return $style->tag();
+    }
+}
