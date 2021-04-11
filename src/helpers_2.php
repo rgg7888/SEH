@@ -48,3 +48,10 @@ if(!function_exists('titlet')) {
         return $title->tag();
     }
 }
+
+if(!function_exists('hdrt')) {
+    function hdrt (string|array|null $args = null, string|array|null $func = null) {
+        $header = new App\Header($args, $func);
+        return $header->tag();
+    }
+}
