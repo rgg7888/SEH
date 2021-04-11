@@ -307,3 +307,25 @@ la etiqueta script()
     codigo javascript dentro de la funcion script asi :
 
     script(null,"your js code here");
+
+ahora hablemos sobre el objeto jsm();
+    esta clase nace espesificamente para 
+    reemplazar el contenido de una etiqueta html
+    por otro utilizando ajax
+
+    entonces para hacer lo anterior la implementacion
+    quedaria de esta forma :
+
+    $object = jsm();
+    $object->httpObject("xhttp");
+    $object->ors("xhttp",si(
+        "this.readyState == 4 && this.status == 200",
+        ihr("demo")
+    ));
+    $object->abrir("xhttp","GET","file.txt","true");
+    $object->enviar();
+
+
+
+
+
