@@ -212,3 +212,12 @@ if(!function_exists('sltr')) {
         return $selector->create();
     }
 }
+
+#clean function 
+
+if(!function_exists('cls')) {
+    function cls (string $cadena) {
+        $clean = new App\Base();
+        return $clean->clean($cadena);
+    }
+}

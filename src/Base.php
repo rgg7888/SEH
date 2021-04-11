@@ -17,6 +17,10 @@ class Base {
         $this->args = $args;
     }
 
+    public function clean(string $cadena){
+        return str_replace("_"," ",$cadena);
+    }
+
     public function setFunc(string|array $func){
         $this->func = $func;
     }
