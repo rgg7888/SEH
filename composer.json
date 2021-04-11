@@ -6,8 +6,7 @@
       "App\\": "src/"
     },
     "files": [
-      "src/helpers.php",
-      "src/helpers_2.php"
+      "src/helpers.php"
     ]
   },
   "minimum-stability": "dev",
