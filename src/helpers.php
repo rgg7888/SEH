@@ -307,3 +307,21 @@ if(!function_exists('cls')) {
         return $clean->clean($cadena, $separador);
     }
 }
+
+#data base functions
+
+if(!function_exists('mysqli')) {
+    function mysqli(string $server, string $username, string $password){
+        $mysqli = new App\DataBase($server,$username,$password,"mysqli");
+        $mysqli->connect();
+        return $mysqli->getConexion();
+    }
+}
+
+if(!function_exists('pdo')) {
+    function pdo(string $server, string $dbname, string $username, string $password){
+        $pdo = new App\DataBase($server,$username,$password,"pdo");
+        $pdo->connect($dbname);
+        return $pdo->getConexion();
+    }
+}

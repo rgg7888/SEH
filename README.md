@@ -241,6 +241,18 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     "R" => "margin-left: ",
     "S" => "background-image: "
 
+#CONEXION A UNA BASE DE DATOS
+
+    hoy 4/14/2021 , tenemos dos funciones para conectarnos a una base de datos
+    la primera es mysqli() y la segunda es pdo()
+
+    estas funciones retornan el objeto de la conexion para despues de conectarnos
+    poder trabajar con las consultas o lo que necesitemos hacer con la base de datos.
+
+    mysqli() recibe como argumentos : nombre del servidor, nombre de usuario y contraseña
+
+    pdo() recibe como argumentos : nombre del servidor, nombre de la base de datos, nombre de usuario y contraseña 
+
 #A TOMAR EN CUENTA
 
     1- Aun no tiene todas las propiedades css implementadas
