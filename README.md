@@ -255,7 +255,10 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     "S" => "background-image: ",
     "T" => "padding-top: ",
     "U" => "padding-bottom: ",
-    "V" => "margin-bottom: "
+    "V" => "margin-bottom: ",
+    "X" => "background-size: ",
+    "Y" => "background-position: ",
+    "Z" => "background-repeat: "
 
 #CONEXION A UNA BASE DE DATOS
 
