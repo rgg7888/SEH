@@ -252,7 +252,9 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     "P" => "text-decoration: ",
     "Q" => "left: ",
     "R" => "margin-left: ",
-    "S" => "background-image: "
+    "S" => "background-image: ",
+    "T" => "padding-top: ",
+    "U" => "padding-bottom: "
 
 #CONEXION A UNA BASE DE DATOS
 
