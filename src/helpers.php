@@ -217,6 +217,13 @@ if(!function_exists('b')) {
     }
 }
 
+if(!function_exists('article')) {
+    function article (string|array|null $args = null, string|array|null $func = null) {
+        $article = new App\Article($args, $func);
+        return $article->tag();
+    }
+}
+
 #javascript functions
 
 if(!function_exists('changeContentOf')) {

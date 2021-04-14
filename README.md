@@ -79,7 +79,7 @@ la funcion body() esta funcion es la siguiente en
 las funciones div() address() title() hdr()
     main() section() footer() style() p()
     h1() h2() h3() h4() h5() h6() span() table()
-    tr() td() th() thead() tbody() tfoot() b()
+    tr() td() th() thead() tbody() tfoot() b() article()
 
     tienen los mismo atributos que body
     tambien reciben un arreglo por segundo
