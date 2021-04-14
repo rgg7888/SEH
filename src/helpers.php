@@ -224,6 +224,27 @@ if(!function_exists('article')) {
     }
 }
 
+if(!function_exists('ul')) {
+    function ul (string|array|null $args = null, string|array|null $func = null) {
+        $ul = new App\Ul($args, $func);
+        return $ul->tag();
+    }
+}
+
+if(!function_exists('ol')) {
+    function ol (string|array|null $args = null, string|array|null $func = null) {
+        $ol = new App\Ol($args, $func);
+        return $ol->tag();
+    }
+}
+
+if(!function_exists('li')) {
+    function li (string|array|null $args = null, string|array|null $func = null) {
+        $li = new App\Li($args, $func);
+        return $li->tag();
+    }
+}
+
 #javascript functions
 
 if(!function_exists('changeContentOf')) {
