@@ -299,6 +299,13 @@ if(!function_exists('sltr')) {
     }
 }
 
+if(!function_exists('mq')) {
+    function mq (string|null $size, array|null $selectores = null) {
+        $mq = new App\MQuerie($size, $selectores);
+        return $mq->set();
+    }
+}
+
 #clean function 
 
 if(!function_exists('cls')) {

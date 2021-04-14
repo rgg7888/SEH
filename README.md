@@ -209,6 +209,19 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     donde el key es el nombre de la variable y el value
     sera el valor que tomara esa variable.
 
+#Media Queries 
+
+    para crear media queries es muy sencillo con la funcion 
+    mq() , primero le pasamos como primer argumento el tamaño
+    minimo de la pantalla en la cual queremos aplicar los estilos 
+
+    el segundo parametro le pasamos un arreglo con los selectores 
+    y sus propiedades css
+
+    *NOTA esta funcion solo aplica para min-width , en caso de querer
+    utilizar max-width le recomiendo utilizar la funcion lk() para
+    agregar un archivo css externo con las reglas que usted necesite
+
 #PROPIEDADES CSS DISPONIBLES YA MISMO.
 
     "0" => "box-sizing: ",
