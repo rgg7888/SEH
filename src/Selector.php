@@ -57,7 +57,8 @@ class Selector {
             "R" => "margin-left: ",
             "S" => "background-image: ",
             "T" => "padding-top: ",
-            "U" => "padding-bottom: "
+            "U" => "padding-bottom: ",
+            "V" => "margin-bottom: "
         };
     }
 

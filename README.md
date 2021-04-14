@@ -254,7 +254,8 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     "R" => "margin-left: ",
     "S" => "background-image: ",
     "T" => "padding-top: ",
-    "U" => "padding-bottom: "
+    "U" => "padding-bottom: ",
+    "V" => "margin-bottom: "
 
 #CONEXION A UNA BASE DE DATOS
 
