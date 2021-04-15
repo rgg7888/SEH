@@ -75,13 +75,24 @@ class DataBase {
 
     }
 
-    protected function pdoConnection(string $dbName){
+    protected function pdoConnection(string $dbName = null){
 
         try {
-            $conn = new \PDO("mysql:host=".$this->getServer().";dbname=$dbName", $this->getUsername(), $this->getPassword());
-            $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            $this->setConexion($conn);
-            $this->setMessage("Connected successfully");
+            if($dbName != null){
+
+                $conn = new \PDO("mysql:host=".$this->getServer().";dbname=$dbName", $this->getUsername(), $this->getPassword());
+                $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+                $this->setConexion($conn);
+                $this->setMessage("Connected successfully");
+
+            }else{
+
+                $conn = new \PDO("mysql:host=".$this->getServer(), $this->getUsername(), $this->getPassword());
+                $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+                $this->setConexion($conn);
+                $this->setMessage("Connected successfully");
+
+            }
         } catch(PDOException $e) {
             $this->setMessage("Connection failed");
         }
@@ -95,6 +106,34 @@ class DataBase {
         switch($type){
             case "mysqli" : return $this->mysqliConnection(); break;
             case "pdo" : return $this->pdoConnection($dbName); break;
+        }
+
+    }
+
+    public function createDb($conexion, string $dbName){
+
+        if($this->getType() === "mysqli"){
+
+            $sql = "CREATE DATABASE $dbName";
+
+            if ($conexion->query($sql) === TRUE) {
+                $this->setMessage("Database created successfully");
+            } else {
+                $this->setMessage("Error creating database");
+            }
+
+            $conexion->close();
+
+        }else if($this->getType() === "pdo"){
+
+            try {
+                $sql = "CREATE DATABASE $dbName";
+                $conexion->exec($sql);
+                $this->setMessage("Database created successfully");
+            } catch(PDOException $e) {
+                $this->setMessage("Error creating database");
+            }
+
         }
 
     }

@@ -5,6 +5,7 @@ use App\DataBase;
 
 class DataBaseTest extends TestCase
 {
+
     public function test_create_a_dataBase_Mysqli_Connection()
     {
         $connection = new DataBase("localhost","root","","mysqli");
@@ -24,4 +25,33 @@ class DataBaseTest extends TestCase
         $this->assertEquals("Connected successfully", $connection->getMessage());
 
     }
+
+    public function test_create_a_table_mysqli(){
+
+        $createDb = new DataBase("localhost","root","","mysqli");
+
+        $createDb->connect();
+
+        $conexion = $createDb->getConexion();
+
+        $createDb->createDb($conexion,"MyDb");
+
+        $this->assertEquals("Database created successfully", $createDb->getMessage());
+
+    }
+
+    public function test_create_a_table_pdo(){
+
+        $createDb = new DataBase("localhost","root","","pdo");
+
+        $createDb->connect();
+
+        $conexion = $createDb->getConexion();
+
+        $createDb->createDb($conexion,"myDBPDO");
+
+        $this->assertEquals("Database created successfully", $createDb->getMessage());
+
+    }
+
 }
