@@ -272,6 +272,17 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
 
     pdo() recibe como argumentos : nombre del servidor, nombre de la base de datos, nombre de usuario y contraseña 
 
+#CREATE A DATA BASE
+
+    Para crear una base de datos tenemos los metodos 
+
+    createDbM() y createDbP(), el primero para crear una data base
+    utilizando mysqli() y el segundo utilizando pdo()
+
+    al igual que los metodos anteriores le pasamos por argumento los datos de 
+    conexion y el nombre de la base de datos que queremos crear, el orden es el 
+    siguiente : "server","username","password","dataBaseName"
+
 #A TOMAR EN CUENTA
 
     1- Aun no tiene todas las propiedades css implementadas

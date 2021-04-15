@@ -325,10 +325,28 @@ if(!function_exists('mysqli')) {
     }
 }
 
+if(!function_exists('createDbM')) {
+    function createDbM(string $server, string $username, string $password, string $dbname){
+        $mysqli = new App\DataBase($server,$username,$password,"mysqli");
+        $mysqli->connect();
+        $conn = $mysqli->getConexion();
+        $mysqli->createDb($conn,$dbname);
+    }
+}
+
 if(!function_exists('pdo')) {
     function pdo(string $server, string $dbname, string $username, string $password){
         $pdo = new App\DataBase($server,$username,$password,"pdo");
         $pdo->connect($dbname);
         return $pdo->getConexion();
+    }
+}
+
+if(!function_exists('createDbP')) {
+    function createDbP(string $server, string $username, string $password, string $dbname){
+        $pdo = new App\DataBase($server,$username,$password,"pdo");
+        $pdo->connect();
+        $conn = $pdo->getConexion();
+        $pdo->createDb($conn,$dbname);
     }
 }
