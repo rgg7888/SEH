@@ -299,6 +299,13 @@ if(!function_exists('sltr')) {
     }
 }
 
+if(!function_exists('sltr2')) {
+    function sltr2 (string|null $id, array|null $rules = null) {
+        $selector = new App\Sp2($id, $rules);
+        return $selector->create();
+    }
+}
+
 if(!function_exists('mq')) {
     function mq (string|null $size, array|null $selectores = null) {
         $mq = new App\MQuerie($size, $selectores);

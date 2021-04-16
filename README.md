@@ -198,7 +198,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     tenemos dos funciones mas
     la funcion vars() y la funcion sltr()
 
-    para la funcion sltr() colocamos como primer
+    para la funcion sltr() y sltr2() colocamos como primer
     arguento el selector css y como segundo parametro
     le pasamos las propiedades css mediante un arreglo
 
