@@ -27,8 +27,8 @@ class Sp2 {
 
     public function whatItIs(char|string $char){
         return match($char){#cua cua cuacua cua cua cuacua cua cuara ra cua cua.
-            "0" => "scroll-snap-align: "/*,
-            "1" => "margin: ",
+            "0" => "scroll-snap-align: ",
+            "1" => "vertical-align: "/*,
             "2" => "padding: ",
             "3" => "font-size: ",
             "4" => "font-family: ",

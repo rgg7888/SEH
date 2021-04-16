@@ -264,7 +264,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     #CLASS Sp2
 
         "0" => "scroll-snap-align: ",
-        "1" => "available spot: ",
+        "1" => "vertical-align: ",
         "2" => "available spot: ",
         "3" => "available spot: ",
         "4" => "available spot: ",
