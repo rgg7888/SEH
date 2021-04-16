@@ -2,28 +2,14 @@
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-#Objects
-    #
-        #Html Tag Content
-            //head tag instancia
-            #Head Tag Content
-                //meta tags and others instancias
-            #
-            //body tag instancia
-            #body Tag Content
-                //block tags type and others instancias
-            #
-        #
-        #Css
-        #
-            //objetos css
-        #
-    #
-#Setters
-    #
-        //set or add the instancias to the correspondientes tags
-    #
-#Print
-    #
-        //con echo llama imprime el resultado del metodo tag
-    #
+echo unirStyles([
+    sltr(".plans-container--card",[
+        "8relative","C70%","D190px",
+        "I300px","E250px","150px 8px 0",
+        "20 15px","Lvar(--just-white)",
+        "O15px","M0 4px 8px rgba(89, 73, 30, 0.16)"
+    ]),
+    sltr2(".plans-container--card",[
+        "0center"
+    ])
+]);

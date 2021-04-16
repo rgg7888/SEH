@@ -306,6 +306,15 @@ if(!function_exists('sltr2')) {
     }
 }
 
+if(!function_exists('unirStyles')) {
+    function unirStyles(array $styles) {
+        
+        $sltr = new App\Sp2();
+        
+        return $sltr->unirStyles($styles);
+    }
+}
+
 if(!function_exists('mq')) {
     function mq (string|null $size, array|null $selectores = null) {
         $mq = new App\MQuerie($size, $selectores);
