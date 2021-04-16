@@ -4,6 +4,14 @@ namespace App;
 
 class Body extends Base implements TagInterface {
 
+    public function whatItIs(char|string $char){
+        return match($char){
+            "C" => "class=\"",
+            "I" => "id=\"",
+            "O" => "onload=\""
+        };
+    }
+
     public function createOpenTag(array $attVal){
         $string = implode(" ",$attVal);
         return "<body ".$string.">";
