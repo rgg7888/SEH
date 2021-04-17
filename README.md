@@ -270,7 +270,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
         "4" => "overflow: ",
         "5" => "overscroll-behavior-x: ",
         "6" => "scroll-snap-type: ",
-        "7" => "available spot: ",
+        "7" => "scroll-snap-align: ",
         "8" => "available spot: ",
         "9" => "available spot: ",
         "A" => "available spot: ",
