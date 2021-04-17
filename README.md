@@ -222,6 +222,16 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     utilizar max-width le recomiendo utilizar la funcion lk() para
     agregar un archivo css externo con las reglas que usted necesite
 
+    example :
+
+    mq("930",[
+        sltr(//selector),
+        unirStyles([
+            sltr(//selector),
+            sltr2(//selector)
+        ])
+    ]);
+
 #PROPIEDADES CSS DISPONIBLES YA MISMO.
     #CLASS Selector :
 
