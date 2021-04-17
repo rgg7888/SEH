@@ -271,7 +271,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
         "5" => "overscroll-behavior-x: ",
         "6" => "scroll-snap-type: ",
         "7" => "scroll-snap-align: ",
-        "8" => "available spot: ",
+        "8" => "align-items: ",
         "9" => "available spot: ",
         "A" => "available spot: ",
         "B" => "available spot: ",
