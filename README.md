@@ -283,7 +283,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
         "7" => "scroll-snap-align: ",
         "8" => "align-items: ",
         "9" => "list-style: ",
-        "A" => "available spot: ",
+        "A" => "flex-wrap: ",
         "B" => "available spot: ",
         "C" => "available spot: ",
         "D" => "available spot: ",
