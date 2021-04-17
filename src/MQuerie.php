@@ -26,7 +26,7 @@ class MQuerie {
     }
 
     public function set(){
-        return "@media screen and (max-width: ".$this->getSize()."px) {".implode("",$this->getSelectores())."}";
+        return "@media screen and (min-width: ".$this->getSize()."px) {".implode("",$this->getSelectores())."}";
     }
 
 }
