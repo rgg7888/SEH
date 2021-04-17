@@ -265,9 +265,9 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
 
         "0" => "scroll-snap-align: ",
         "1" => "vertical-align: ",
-        "2" => "available spot: ",
-        "3" => "available spot: ",
-        "4" => "available spot: ",
+        "2" => "overflow-x: ",
+        "3" => "overflow-y: ",
+        "4" => "overflow: ",
         "5" => "available spot: ",
         "6" => "available spot: ",
         "7" => "available spot: ",
