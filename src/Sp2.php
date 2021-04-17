@@ -26,7 +26,7 @@ class Sp2 {
     }
 
     public function whatItIs(char|string $char){
-        return match($char){#cua cua cuacua cua cua cuacua cua cuara ra cua cua.
+        return match($char){
             "0" => "scroll-snap-align: ",
             "1" => "vertical-align: ",
             "2" => "overflow-x: ",
@@ -35,8 +35,8 @@ class Sp2 {
             "5" => "overscroll-behavior-x: ",
             "6" => "scroll-snap-type: ",
             "7" => "scroll-snap-align: ",
-            "8" => "align-items: "/*,
-            "9" => "display: ",
+            "8" => "align-items: ",
+            "9" => "list-style: "/*,
             "A" => "flex-direction: ",
             "B" => "justify-content: ",
             "C" => "width: ",
