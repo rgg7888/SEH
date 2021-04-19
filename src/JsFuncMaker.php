@@ -67,6 +67,12 @@ class JsFuncMaker {
         }else{
             $argumentos = $args;
         }
-        return "function ".$this->getFunc()."(".$argumentos."){".$functionContent."}";
+        $content = '';
+        if(is_array($functionContent)){
+            $content = implode("",$functionContent);
+        }else{
+            $content = $functionContent;
+        }
+        return "function ".$this->getFunc()."(".$argumentos."){".$content."}";
     }
 }
