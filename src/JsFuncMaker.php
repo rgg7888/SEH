@@ -60,7 +60,7 @@ class JsFuncMaker {
         return $objectName.".send();";
     }
 
-    public function make(string $functionContent, string|array|null $args = null){
+    public function make(string|array $functionContent, string|array|null $args = null){
         $argumentos = '';
         if(is_array($args)){
             $argumentos = implode("",$args);
