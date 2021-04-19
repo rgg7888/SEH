@@ -60,7 +60,13 @@ class JsFuncMaker {
         return $objectName.".send();";
     }
 
-    public function make(string $functionContent){
-        return "function ".$this->getFunc()."(){".$functionContent."}";
+    public function make(string $functionContent, string|array|null $args = null){
+        $argumentos = '';
+        if(is_array($args)){
+            $argumentos = implode("",$args);
+        }else{
+            $argumentos = $args;
+        }
+        return "function ".$this->getFunc()."(".$argumentos."){".$functionContent."}";
     }
 }
