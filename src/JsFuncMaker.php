@@ -50,9 +50,9 @@ class JsFuncMaker {
         return "document.getElementById(\"".$elementId."\").innerHTML = this.responseText;";
     }
 
-    public function abrir(string $objectName, string $method, string $fileName, string $x){
+    public function abrir(string $objectName, string $method, string $fileName, string $x, string|null $args = null){
 
-        return $objectName.".open(\"".$method."\", \"".$fileName."\", ".$x.");";
+        return $objectName.".open(\"".$method."\", \"".$fileName."\"".$args.", ".$x.");";
 
     }
 
