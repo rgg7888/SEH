@@ -284,7 +284,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
         "8" => "align-items: ",
         "9" => "list-style: ",
         "A" => "flex-wrap: ",
-        "B" => "available spot: ",
+        "B" => "transition: ",
         "C" => "available spot: ",
         "D" => "available spot: ",
         "E" => "available spot: ",
