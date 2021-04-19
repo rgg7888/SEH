@@ -24,13 +24,25 @@ class JsFuncMaker {
         return "var ".$objectName." = new XMLHttpRequest();";
     }
 
-    public function ors(string $objectName, string|null $functionContent = null ){
-        return $objectName.".onreadystatechange = function() {".$functionContent."};";
+    public function ors(string $objectName, string|array|null $functionContent = null ){
+        $content = '';
+        if(is_array($functionContent)){
+            $content = implode("",$functionContent);
+        }else{
+            $content = $functionContent;
+        }
+        return $objectName.".onreadystatechange = function() {".$content."};";
     }
 
-    public function si(string $conditions, string|null $siContent = null){
+    public function si(string $conditions, string|array|null $siContent = null){
 
-        return "if (".$conditions.") {".$siContent."}";
+        $content = '';
+        if(is_array($siContent)){
+            $content = implode("",$siContent);
+        }else{
+            $content = $siContent;
+        }
+        return "if (".$conditions.") {".$content."}";
 
     }
 
