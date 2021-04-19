@@ -11,7 +11,8 @@ class Img extends Base implements TagInterface {
             "S" => "src=\"",
             "A" => "alt=\"",
             "W" => "width=\"",
-            "H" => "height=\""
+            "H" => "height=\"",
+            "S" => "style=\""
         };
     }
 
