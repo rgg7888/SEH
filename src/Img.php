@@ -12,7 +12,7 @@ class Img extends Base implements TagInterface {
             "A" => "alt=\"",
             "W" => "width=\"",
             "H" => "height=\"",
-            "S" => "style=\""
+            "s" => "style=\""
         };
     }
 
