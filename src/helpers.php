@@ -262,7 +262,7 @@ if(!function_exists('changeContentOf')) {
 }
 
 if(!function_exists('jfm')) {
-    function jsm (string $functionName) {
+    function jfm (string $functionName) {
         return $changeContent = new App\JsFuncMaker($functionName);
     }
 }
