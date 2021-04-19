@@ -15,7 +15,7 @@ class MQuerieTest extends TestCase
             $html->create()
         ]);
 
-        $this->assertEquals("@media screen and (max-width: 600px) {*{box-sizing: border-box;margin: 0;padding: 0;}html{font-size: 62.5%;font-family: 'DM Sans', sans-serif;}}", $mq->set());
+        $this->assertEquals("@media screen and (min-width: 600px) {*{box-sizing: border-box;margin: 0;padding: 0;}html{font-size: 62.5%;font-family: 'DM Sans', sans-serif;}}", $mq->set());
 
     }
 }
