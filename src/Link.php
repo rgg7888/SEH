@@ -8,7 +8,8 @@ class Link extends Base implements TagInterface {
         return match($char){
             "H" => "href=\"",
             "R" => "rel=\"",
-            "T" => "type=\""
+            "T" => "type=\"",
+            "M" => "media=\""
         };
     }
 
