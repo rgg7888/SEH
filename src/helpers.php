@@ -245,6 +245,13 @@ if(!function_exists('li')) {
     }
 }
 
+if(!function_exists('form')) {
+    function form (string|array|null $args = null, string|array|null $func = null) {
+        $form = new App\Form($args, $func);
+        return $form->tag();
+    }
+}
+
 #javascript functions
 
 if(!function_exists('changeContentOf')) {
@@ -280,6 +287,13 @@ if(!function_exists('lk')) {
     function lk (string|array|null $args = null) {
         $link = new App\Link($args);
         return $link->tag();
+    }
+}
+
+if(!function_exists('input')) {
+    function input (string|array|null $args = null) {
+        $input = new App\Input($args);
+        return $input->tag();
     }
 }
 

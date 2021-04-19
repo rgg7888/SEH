@@ -80,7 +80,7 @@ las funciones div() address() title() hdr()
     main() section() footer() style() p()
     h1() h2() h3() h4() h5() h6() span() table()
     tr() td() th() thead() tbody() tfoot() b() article()
-    ul() ol() li()
+    ul() ol() li() form()
 </pre>
     tienen los mismo atributos que body
     tambien reciben un arreglo por segundo
@@ -182,7 +182,7 @@ ahora hablemos sobre el objeto jfm();
 
 POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
 
-    img() meta() lk()
+    img() meta() lk() input()
 
     pero usted puede implementar las etiquetas que le hagan
     falta creando la clase correspondiente y heredando los 
