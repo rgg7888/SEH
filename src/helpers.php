@@ -109,13 +109,13 @@ if(!function_exists('body')) {
 if(!function_exists('metaGroup')) {
     function metaGroup ( string|null $description = null , string|null $keywords = null , string|null $autor = null ) {
         #grupo de etiquetas
-        $metaGroup = [];
+        #$metaGroup = [];
             #meta tag 1
             $tag01 = new App\IWantA ('meta');
             $piezas = $tag01->iWantA();
             $piezas[2] = ' charset="UTF-8"';
-            $etiqueta01 = App\Ensamblar::ensamblar( $piezas );
-            array_push($metaGroup,$etiqueta01);
+            return App\Ensamblar::ensamblar( $piezas );
+            #array_push($metaGroup,$etiqueta01);
             #meta tag 2 
             /*
             $tag02 = new App\IWantA ('meta');
@@ -147,7 +147,7 @@ if(!function_exists('metaGroup')) {
             $piezas[2] = ' http-equiv="X-UA-Compatible" content="ie=edge"';
             $etiqueta06 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta06);*/
-        return implode("",$metaGroup);
+        #return implode("",$metaGroup);
         //
     }
 }
