@@ -15,4 +15,14 @@ class TagAjaxTest extends TestCase {
         $this->assertEquals ( '<!DOCTYPE html>', $doctype->imprime () );
     }
 
+    public function test_create_the_html_tag () {
+        $html = new TagAjax ('html');
+        $this->assertEquals ( '<html></html>', $html->imprime () );
+    }
+
+    public function test_create_the_html_tag_with_the_lang_en_attr () {
+        $html = new TagAjax ('html',null,'len');
+        $this->assertEquals ( '<html lang="en"></html>', $html->imprime () );
+    }
+
 }

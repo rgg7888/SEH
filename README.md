@@ -418,3 +418,32 @@ que exista un forma corta y una mas descriptiva de lo que se esta haciendo
 cambio del orden de los argumentos , esta version tomara como segundo
 argumento los atributos para de este modo evitar el valor null en cada
 llamada a ala etiqueta x en caso que esta no necesite de argumentos
+
+en esta version tendremos disponibles para la etiqueta html ,
+los helpers html() y emptyHtml() , la diferencia entre ambas
+se puede notar si pensamos por ejemplo en visualizar :
+
+1- <html></html> 
+2- <html lang="en"></html>
+
+por ejemplo.
+
+para el primer caso con la funcion html() se hace asi :
+
+    html ();
+
+para el segundo caso con la funcion html() se hace asi :
+
+    html (null,'len');
+
+para el primer caso con la funcion emptyHtml() se hace asi :
+
+    emptyHtml ();
+
+para el segundo caso con la funcion emptyHtml() se hace asi :
+
+    emptyHtml ('en');
+
+si presta atencion las ventajas de una versus de otra dependeran
+de la situacion concluyendo que realmente no existe una funcion
+mejor que otra simplemente existen diferentes casos de uso.
