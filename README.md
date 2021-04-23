@@ -182,7 +182,7 @@ ahora hablemos sobre el objeto jfm();
 
 POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
 
-    img() meta() lk() input()
+    img() meta() lk() input() hr()
 
     pero usted puede implementar las etiquetas que le hagan
     falta creando la clase correspondiente y heredando los 
