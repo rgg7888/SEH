@@ -114,56 +114,38 @@ if(!function_exists('metaGroup')) {
             $tag01 = new App\IWantA ('meta');
             $piezas = $tag01->iWantA();
             $piezas[2] = ' charset="UTF-8"';
-            return App\Ensamblar::ensamblar( $piezas );
+            App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta01);
-            echo "<pre>";
-            var_dump($metaGroup);
-            echo "</pre>";
             #meta tag 2 
             $tag02 = new App\IWantA ('meta');
-            $piezas2 = $tag02->iWantA();
-            $piezas2[2] = ' name="description" content="'.$description.'"';
-            $etiqueta02 = App\Ensamblar::ensamblar( $piezas2 );
+            $piezas = $tag02->iWantA();
+            $piezas[2] = ' name="description" content="'.$description.'"';
+            $etiqueta02 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta02);
-            echo "<pre>";
-            var_dump($metaGroup);
-            echo "</pre>";
             #meta tag 3
             $tag03 = new App\IWantA ('meta');
-            $piezas3 = $tag03->iWantA();
-            $piezas3[2] = ' name="keywords" content="'.$keywords.'"';
-            $etiqueta03 = App\Ensamblar::ensamblar( $piezas3 );
+            $piezas = $tag03->iWantA();
+            $piezas[2] = ' name="keywords" content="'.$keywords.'"';
+            $etiqueta03 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta03);
-            echo "<pre>";
-            var_dump($metaGroup);
-            echo "</pre>";
             #meta tag 4
             $tag04 = new App\IWantA ('meta');
-            $piezas4 = $tag04->iWantA();
-            $piezas4[2] = ' name="author" content="'.$autor.'"';
-            $etiqueta04 = App\Ensamblar::ensamblar( $piezas4 );
+            $piezas = $tag04->iWantA();
+            $piezas[2] = ' name="author" content="'.$autor.'"';
+            $etiqueta04 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta04);
-            echo "<pre>";
-            var_dump($metaGroup);
-            echo "</pre>";
             #meta tag 5
             $tag05 = new App\IWantA ('meta');
-            $piezas5 = $tag05->iWantA();
-            $piezas5[2] = ' name="viewport" content="width=device-width, initial-scale=1.0"';
-            $etiqueta05 = App\Ensamblar::ensamblar( $piezas5 );
+            $piezas = $tag05->iWantA();
+            $piezas[2] = ' name="viewport" content="width=device-width, initial-scale=1.0"';
+            $etiqueta05 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta05);
-            echo "<pre>";
-            var_dump($metaGroup);
-            echo "</pre>";
             #meta tag 6
             $tag06 = new App\IWantA ('meta');
-            $piezas6 = $tag06->iWantA();
-            $piezas6[2] = ' http-equiv="X-UA-Compatible" content="ie=edge"';
-            $etiqueta06 = App\Ensamblar::ensamblar( $piezas6 );
+            $piezas = $tag06->iWantA();
+            $piezas[2] = ' http-equiv="X-UA-Compatible" content="ie=edge"';
+            $etiqueta06 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta06);
-            echo "<pre>";
-            var_dump($metaGroup);
-            echo "</pre>";
         return implode("",$metaGroup);
         //
     }
