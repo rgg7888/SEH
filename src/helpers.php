@@ -54,7 +54,7 @@ if(!function_exists('htm')) {
  */
 
 if(!function_exists('lmh')) {
-    function ldmh ( string|array|null $content = null , string|null $attr = null ) {
+    function lmh ( string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('html');
         $piezas = $tag->iWantA();
         $attr = new App\GetFirstChar ('l'.$attr);
