@@ -75,7 +75,7 @@ if(!function_exists('lmh')) {
 }
 
 if(!function_exists('head')) {
-    function head ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
+    function head ( string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('head');
         $piezas = $tag->iWantA();
         $piezas[2] = '';
@@ -84,7 +84,7 @@ if(!function_exists('head')) {
 }
 
 if(!function_exists('body')) {
-    function body ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
+    function body ( string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('body');
         $piezas = $tag->iWantA();
         $piezas[2] = '';
