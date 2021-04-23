@@ -33,3 +33,17 @@ if(!function_exists('html')) {
         echo $html->imprime ();
     }
 }
+
+if(!function_exists('htm')) {
+    function htm ( string|array|null $content , string|null $attr ) {
+        if ( $attr === null && strlen($content) === 2) {
+            $attr = 'l'.$content;
+            $content = null;
+            $html = new App\TagAjax('html',$content,$attr);
+            echo $html->imprime ();
+        } else {
+            $html = new App\TagAjax('html',$content,$attr);
+            echo $html->imprime ();
+        }
+    }
+}
