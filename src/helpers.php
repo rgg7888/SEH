@@ -35,7 +35,7 @@ if(!function_exists('html')) {
 }
 
 if(!function_exists('htm')) {
-    function htm ( string|array|null $content , string|null $attr ) {
+    function htm ( string|array|null $content = null , string|null $attr = null ) {
         if ( $attr === null && strlen($content) === 2) {
             $attr = 'l'.$content;
             $content = null;
