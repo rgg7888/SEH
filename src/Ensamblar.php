@@ -3,7 +3,7 @@
 namespace App;
 
 class Ensamblar {
-    public static function ensamblar ( array $piezas , string|array $content ) {
+    public static function ensamblar ( array $piezas , string|array|null $content = null ) {
         if ( is_array($content) ) {
             $content = implode("",$content);
         }

@@ -17,4 +17,16 @@ class EnsamblarTest extends TestCase {
         $piezas[2] = ' '.$atributo;
         $this->assertEquals( '<html lang="en">contenido</html>' , Ensamblar::ensamblar( $piezas , "contenido" ) );
     }
+    public function test_create_tag_no_attr () {
+        $tag = new IWantA ('html');
+        $piezas = $tag->iWantA();
+        $piezas[2] = "";
+        $this->assertEquals( '<html>contenido</html>' , Ensamblar::ensamblar( $piezas , "contenido" ) );
+    }
+    public function test_create_empty_tag () {
+        $tag = new IWantA ('html');
+        $piezas = $tag->iWantA();
+        $piezas[2] = "";
+        $this->assertEquals( '<html></html>' , Ensamblar::ensamblar( $piezas ) );
+    }
 }
