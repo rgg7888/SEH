@@ -402,7 +402,7 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     los _ se reemplazaran de nuevo con espacios.
 
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@ VERSION 0.0.2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@ VERSION 0.0.2 @@@@@@@@
 
 esta version estara enfocada a el manejo de peticiones y refinamiento de los 
 detalles de lectura y creacion de las etiquetas html asi como tambien el 
