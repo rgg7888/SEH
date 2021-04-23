@@ -6,7 +6,9 @@ class Div extends Base implements TagInterface {
 
     public function whatItIs(char|string $char){
         return match($char){
-            "S" => "style=\""
+            "S" => "style=\"",
+            "C" => "class=\"",
+            "I" => "id=\""
         };
     }
 

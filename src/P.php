@@ -4,6 +4,14 @@ namespace App;
 
 class P extends Base implements TagInterface {
 
+    public function whatItIs(char|string $char){
+        return match($char){
+            "S" => "style=\"",
+            "C" => "class=\"",
+            "I" => "id=\""
+        };
+    }
+
     public function createOpenTag(array $attVal){
         $string = implode(" ",$attVal);
         return "<p ".$string.">";
