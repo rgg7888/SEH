@@ -8,7 +8,9 @@ class Script extends Base implements TagInterface {
         return match($char){
             "C" => "class=\"",
             "I" => "id=\"",
-            "S" => "src=\""
+            "S" => "src=\"",
+            "I" => "integrity=\"",
+            "C" => "crossorigin=\""
         };
     }
 
