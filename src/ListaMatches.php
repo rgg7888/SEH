@@ -4,7 +4,7 @@ namespace App;
 
 class ListaMatches {
     public function __construct( 
-        private string $char
+        private string|null $char = null
     ){}
 
     public function setChar (string $char) {
@@ -16,9 +16,14 @@ class ListaMatches {
     }
 
     public function listaMatches () {
-        return match( $this->getChar() ){
-            "!" => "<!DOCTYPE html>",
-            "l" => "lang=\""
-        };
+        try {
+            return match( $this->getChar() ){
+                "!" => "<!DOCTYPE html>",
+                "l" => "lang=\"",
+                default => "noHayMatches"
+            };
+        }catch(Exception $e){
+            return "Error " . $e;
+        }
     }
 }

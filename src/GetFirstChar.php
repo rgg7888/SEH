@@ -4,7 +4,7 @@ namespace App;
 
 class GetFirstChar {
     public function __construct( 
-        private string $cadena
+        private string|null $cadena = null
     ){}
 
     public function setCadena (string $cadena) {

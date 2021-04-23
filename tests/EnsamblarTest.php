@@ -29,4 +29,13 @@ class EnsamblarTest extends TestCase {
         $piezas[2] = "";
         $this->assertEquals( '<html></html>' , Ensamblar::ensamblar( $piezas ) );
     }
+    public function test_create_empty_tag_plus_attr () {
+        $tag = new IWantA ('html');
+        $piezas = $tag->iWantA();
+        $attr = new GetFirstChar ('len');
+        $match = new ListaMatches ($attr->getFirstChar());
+        $atributo = CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+        $piezas[2] = ' '.$atributo;
+        $this->assertEquals( '<html lang="en"></html>' , Ensamblar::ensamblar( $piezas ) );
+    }
 }

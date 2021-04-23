@@ -47,3 +47,36 @@ if(!function_exists('htm')) {
         }
     }
 }
+
+/**
+ * Hypertext Markup Language (html)
+ * Lenguaje de marcado de hipertexto (lmh)
+ */
+
+if(!function_exists('lmh')) {
+    function lmh ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
+        $letra = new App\GetFirstChar ($content);
+        $match = new App\ListaMatches ($letra->getFirstChar());
+        if ($attr === null && $content === null && $tag !== null) {
+            $tag = new App\IWantA ($tag);
+            $piezas = $tag->iWantA();
+            $piezas[2] = "";
+            echo App\Ensamblar::ensamblar( $piezas );
+        } else if ($match->listaMatches() === 'noHayMatches' && $attr === null && $tag !== null) {
+            $tag = new App\IWantA ($tag);
+            $piezas = $tag->iWantA();
+            $piezas[2] = "";
+            echo App\Ensamblar::ensamblar( $piezas , $content );
+        } else if ($match->listaMatches() !== 'noHayMatches' && $attr === null && $tag !== null) {
+            $tag = new App\IWantA ($tag);
+            $piezas = $tag->iWantA();
+            $attr = new App\GetFirstChar ($content);
+            $match = new App\ListaMatches ($attr->getFirstChar());
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] = ' '.$atributo;
+            echo App\Ensamblar::ensamblar( $piezas );
+        } else {
+            echo "<h1>WTF Are you doing dude !!!</h1>";
+        }
+    }
+}
