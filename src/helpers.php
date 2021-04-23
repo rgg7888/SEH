@@ -80,8 +80,12 @@ if(!function_exists('head')) {
         $piezas = $tag->iWantA();
         $attr = new App\GetFirstChar ($attr);
         $match = new App\ListaMatches ($attr->getFirstChar());
-        $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-        $piezas[2] = ' '.$atributo;
+        if($match->listaMatches() === 'noHayMatches') {
+            $piezas[2] = '';
+        }else{
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] = ' '.$atributo;
+        }
         return App\Ensamblar::ensamblar( $piezas , $content );
     }
 }
