@@ -10,7 +10,8 @@ class Script extends Base implements TagInterface {
             "I" => "id=\"",
             "S" => "src=\"",
             "I" => "integrity=\"",
-            "C" => "crossorigin=\""
+            "C" => "crossorigin=\"",
+            "T" => "type=\""
         };
     }
 
