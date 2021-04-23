@@ -10,7 +10,8 @@ class Link extends Base implements TagInterface {
             "R" => "rel=\"",
             "T" => "type=\"",
             "M" => "media=\"",
-            "I" => "integrity=\""
+            "I" => "integrity=\"",
+            "C" => "crossorigin=\""
         };
     }
 
