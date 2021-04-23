@@ -4,6 +4,12 @@ namespace App;
 
 class Td extends Base implements TagInterface {
 
+    public function whatItIs(char|string $char){
+        return match($char){
+            "C" => "colspan=\""
+        };
+    }
+
     public function createOpenTag(array $attVal){
         $string = implode(" ",$attVal);
         return "<td ".$string.">";
