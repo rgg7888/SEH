@@ -449,3 +449,17 @@ para el segundo caso con la funcion emptyHtml() se hace asi :
 si presta atencion las ventajas de una versus de otra dependeran
 de la situacion concluyendo que realmente no existe una funcion
 mejor que otra simplemente existen diferentes casos de uso.
+
+retomando lo anterior la etiqueta html ahora podra ser representada
+por la funcion lmh() las letras provienen de la traduccion
+de Hypertext Markup Language (html) , Lenguaje de marcado de hipertexto (lmh)
+
+y esta es la funcion mas poderosa que existe hasta el momento cuando de crear 
+a la etiqueta html se refiere.
+
+las razones por la cual es la funcion mas poderosa de seh 
+es que est&aacute; dividida en modulos que en conjunto le permitiran 
+crear cualquier variante de la etiqueta html incluso le notificara
+amablemente que est&aacute; cometiendo un error, si por algun motivo los argumentos
+que esta funcion recibe no coincidan con ninguna condicion para ensamblar
+la pieza.
