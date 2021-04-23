@@ -19,6 +19,10 @@ class IWantA {
         switch ( $this->getTag() ) {
             case 'html': return ['<','html','attrs','>','content','</html>'];
             break;
+            case 'head': return ['<','head','attrs','>','content','</head>'];
+            break;
+            case 'body': return ['<','body','attrs','>','content','</body>'];
+            break;
         }
     }
 }
