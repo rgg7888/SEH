@@ -297,6 +297,13 @@ if(!function_exists('input')) {
     }
 }
 
+if(!function_exists('hr')) {
+    function hr (string|array|null $args = null) {
+        $hr = new App\Hr($args);
+        return $hr->tag();
+    }
+}
+
 #css functions
 
 if(!function_exists('vars')) {
