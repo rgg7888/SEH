@@ -53,70 +53,20 @@ if(!function_exists('htm')) {
  * Lenguaje de marcado de hipertexto (lmh)
  */
 
-if(!function_exists('ldmh')) {
-    function ldmh ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
-        $letra = new App\GetFirstChar ($content);
-        $match = new App\ListaMatches ($letra->getFirstChar());
-        if ($attr === null && $content === null && $tag !== null) {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $piezas[2] = "";
-            echo App\Ensamblar::ensamblar( $piezas );
-        } else if ($match->listaMatches() === 'noHayMatches' && $attr === null && $tag !== null) {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $piezas[2] = "";
-            echo App\Ensamblar::ensamblar( $piezas , $content );
-        } else if ($match->listaMatches() !== 'noHayMatches' && $attr === null && $tag !== null) {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $attr = new App\GetFirstChar ($content);
-            $match = new App\ListaMatches ($attr->getFirstChar());
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
-            echo App\Ensamblar::ensamblar( $piezas );
-        } else {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $attr = new App\GetFirstChar ($attr);
-            $match = new App\ListaMatches ($attr->getFirstChar());
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
-            echo App\Ensamblar::ensamblar( $piezas , $content );
-        }
+if(!function_exists('lmh')) {
+    function ldmh ( string|array|null $content = null , string|null $attr = null ) {
+        $tag = new App\IWantA ('html');
+        $piezas = $tag->iWantA();
+        $attr = new App\GetFirstChar ('l'.$attr);
+        $match = new App\ListaMatches ($attr->getFirstChar());
+        $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+        $piezas[2] = ' '.$atributo;
+        echo App\Ensamblar::ensamblar( $piezas , $content );
     }
 }
 
-if(!function_exists('lmh')) {
-    function lmh ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
-        $letra = new App\GetFirstChar ($content);
-        $match = new App\ListaMatches ($letra->getFirstChar());
-        if ($attr === null && $content === null && $tag !== null) {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $piezas[2] = "";
-            return App\Ensamblar::ensamblar( $piezas );
-        } else if ($match->listaMatches() === 'noHayMatches' && $attr === null && $tag !== null) {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $piezas[2] = "";
-            return App\Ensamblar::ensamblar( $piezas , $content );
-        } else if ($match->listaMatches() !== 'noHayMatches' && $attr === null && $tag !== null) {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $attr = new App\GetFirstChar ($content);
-            $match = new App\ListaMatches ($attr->getFirstChar());
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
-            return App\Ensamblar::ensamblar( $piezas );
-        } else {
-            $tag = new App\IWantA ($tag);
-            $piezas = $tag->iWantA();
-            $attr = new App\GetFirstChar ($attr);
-            $match = new App\ListaMatches ($attr->getFirstChar());
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
-            return App\Ensamblar::ensamblar( $piezas , $content );
-        }
+if(!function_exists('head')) {
+    function head ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
+        
     }
 }
