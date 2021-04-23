@@ -76,6 +76,8 @@ if(!function_exists('lmh')) {
 
 if(!function_exists('head')) {
     function head ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
+        $tag = new App\IWantA ('head');
+        $piezas = $tag->iWantA();
         $attr = new App\GetFirstChar ($attr);
         $match = new App\ListaMatches ($attr->getFirstChar());
         $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
