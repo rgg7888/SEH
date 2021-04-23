@@ -76,7 +76,13 @@ if(!function_exists('ldmh')) {
             $piezas[2] = ' '.$atributo;
             echo App\Ensamblar::ensamblar( $piezas );
         } else {
-            echo "<h1>WTF Are you doing dude !!!</h1>";
+            $tag = new App\IWantA ($tag);
+            $piezas = $tag->iWantA();
+            $attr = new App\GetFirstChar ($attr);
+            $match = new App\ListaMatches ($attr->getFirstChar());
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] = ' '.$atributo;
+            echo App\Ensamblar::ensamblar( $piezas , $content );
         }
     }
 }
@@ -104,7 +110,13 @@ if(!function_exists('lmh')) {
             $piezas[2] = ' '.$atributo;
             return App\Ensamblar::ensamblar( $piezas );
         } else {
-            return "<h1>WTF Are you doing dude !!!</h1>";
+            $tag = new App\IWantA ($tag);
+            $piezas = $tag->iWantA();
+            $attr = new App\GetFirstChar ($attr);
+            $match = new App\ListaMatches ($attr->getFirstChar());
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] = ' '.$atributo;
+            return App\Ensamblar::ensamblar( $piezas , $content );
         }
     }
 }
