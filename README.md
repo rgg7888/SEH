@@ -451,7 +451,7 @@ de la situacion concluyendo que realmente no existe una funcion
 mejor que otra simplemente existen diferentes casos de uso.
 
 retomando lo anterior la etiqueta html ahora podra ser representada
-por la funcion ldmh() las letras provienen de la traduccion
+por la funcion lmh() las letras provienen de la traduccion
 de Hypertext Markup Language (html) , Lenguaje de marcado de hipertexto (lmh)
 
 y esta es la funcion mas poderosa que existe hasta el momento cuando de crear 
@@ -463,3 +463,31 @@ crear cualquier variante de la etiqueta html incluso le notificara
 amablemente que est&aacute; cometiendo un error, si por algun motivo los argumentos
 que esta funcion recibe no coincidan con ninguna condicion para ensamblar
 la pieza.
+
+acontinuacion te muestro los avances respecto a las etiquetas del head 
+una estructura basica en la version 0.0.2 se escribe asi :
+
+dt();
+lmh([
+    head([
+        metaGroup("Free html system","html, php, css, javascript","Ramiro G"),
+        title("Http Requests & JavaScript")
+    ]),
+    body()
+],'en');
+
+como puede notar los nombres de las funciones para las etiquetas son el mismo
+salvo que ahora el argumento null no es necesario agregarlo al inicio
+ya que este se puede omitir porque es el segundo parametro y por default
+es null su valor
+
+la funcion metaGroup() es nueva en esta version 
+y su funcion es declarar por nosotros las meta tags 
+que por regla todo proyecto debe tener
+
+los argumentos son opcionales , pero se recomienta mucho
+pasarle como primer argumento la descripcion de la pagina
+como segundo parametro los keywords o palabras clave
+en formato string divididas por coma y finalmente el nombre del 
+autor , esto nos servira para el seo de la pagina web y como 
+buenas practicas de programacion
