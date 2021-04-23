@@ -400,3 +400,21 @@ POR EL MOMENTO HE IMPLEMENTADO ESTAS ETIQUETAS :
     y la funcion lk tendra que encerrarla dentro de la funcion cls()
     de esta forma : cls(lk("Rshortcut_icon")); asi al imprimirse
     los _ se reemplazaran de nuevo con espacios.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@ VERSION 0.0.2 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+esta version estara enfocada a el manejo de peticiones y refinamiento de los 
+detalles de lectura y creacion de las etiquetas html asi como tambien el 
+mejoramiento en la implementacion de css.
+
+por el momento esta rama seh-v0.0.2 iniciara con la clase TagAjax
+
+y los helpers doctype () y dt () que precticamente son lo mismo 
+sirven para imprimir el <\!DOCTYPE html> de la pagina , la razon
+por la cual implemente dos helper es para tener la posibilidad de 
+que exista un forma corta y una mas descriptiva de lo que se esta haciendo
+
+cambio del orden de los argumentos , esta version tomara como segundo
+argumento los atributos para de este modo evitar el valor null en cada
+llamada a ala etiqueta x en caso que esta no necesite de argumentos
