@@ -410,7 +410,7 @@ mejoramiento en la implementacion de css.
 
 por el momento esta rama seh-v0.0.2 iniciara con la clase TagAjax
 
-y los helpers doctype () y dt () que precticamente son lo mismo 
+y los helpers doctype () y dt () que practicamente son lo mismo 
 sirven para imprimir el <\!DOCTYPE html> de la pagina , la razon
 por la cual implemente dos helper es para tener la posibilidad de 
 que exista un forma corta y una mas descriptiva de lo que se esta haciendo
