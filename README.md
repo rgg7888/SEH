@@ -451,7 +451,7 @@ de la situacion concluyendo que realmente no existe una funcion
 mejor que otra simplemente existen diferentes casos de uso.
 
 retomando lo anterior la etiqueta html ahora podra ser representada
-por la funcion lmh() las letras provienen de la traduccion
+por la funcion ldmh() las letras provienen de la traduccion
 de Hypertext Markup Language (html) , Lenguaje de marcado de hipertexto (lmh)
 
 y esta es la funcion mas poderosa que existe hasta el momento cuando de crear 
@@ -463,3 +463,5 @@ crear cualquier variante de la etiqueta html incluso le notificara
 amablemente que est&aacute; cometiendo un error, si por algun motivo los argumentos
 que esta funcion recibe no coincidan con ninguna condicion para ensamblar
 la pieza.
+
+para cualquier otra tag use lmh().
