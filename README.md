@@ -423,8 +423,8 @@ en esta version tendremos disponibles para la etiqueta html ,
 los helpers html() y emptyHtml() , la diferencia entre ambas
 se puede notar si pensamos por ejemplo en visualizar :
 
-1- <html></html> 
-2- <html lang="en"></html>
+1- *html**/html* 
+2- *html lang="en"**/html*
 
 por ejemplo.
 
