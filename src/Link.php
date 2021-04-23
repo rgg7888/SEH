@@ -9,7 +9,8 @@ class Link extends Base implements TagInterface {
             "H" => "href=\"",
             "R" => "rel=\"",
             "T" => "type=\"",
-            "M" => "media=\""
+            "M" => "media=\"",
+            "I" => "integrity=\""
         };
     }
 
