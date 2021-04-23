@@ -23,6 +23,8 @@ class IWantA {
             break;
             case 'body': return ['<','body','attrs','>','content','</body>'];
             break;
+            case 'meta': return ['<','meta','attrs','','','/>'];
+            break;
         }
     }
 }

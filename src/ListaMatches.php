@@ -20,10 +20,13 @@ class ListaMatches {
             return match( $this->getChar() ){
                 "!" => "<!DOCTYPE html>",
                 "l" => "lang=\"",
+                "c" => "class=\"",
+                "i" => "id=\"",
                 default => "noHayMatches"
             };
         }catch(Exception $e){
             return "Error " . $e;
         }
     }
+
 }
