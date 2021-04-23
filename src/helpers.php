@@ -57,11 +57,20 @@ if(!function_exists('lmh')) {
     function lmh ( string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('html');
         $piezas = $tag->iWantA();
-        $attr = new App\GetFirstChar ('l'.$attr);
-        $match = new App\ListaMatches ($attr->getFirstChar());
-        $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-        $piezas[2] = ' '.$atributo;
-        echo App\Ensamblar::ensamblar( $piezas , $content );
+
+        if ( $attr === null && strlen($content) === 2) {
+            $attr = new App\GetFirstChar ('l'.$content);
+            $match = new App\ListaMatches ($attr->getFirstChar());
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] = ' '.$atributo;
+            echo App\Ensamblar::ensamblar( $piezas );
+        } else {
+            $attr = new App\GetFirstChar ('l'.$attr);
+            $match = new App\ListaMatches ($attr->getFirstChar());
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] = ' '.$atributo;
+            echo App\Ensamblar::ensamblar( $piezas , $content );
+        }
     }
 }
 
