@@ -463,5 +463,3 @@ crear cualquier variante de la etiqueta html incluso le notificara
 amablemente que est&aacute; cometiendo un error, si por algun motivo los argumentos
 que esta funcion recibe no coincidan con ninguna condicion para ensamblar
 la pieza.
-
-para cualquier otra tag use lmh().
