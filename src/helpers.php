@@ -78,14 +78,7 @@ if(!function_exists('head')) {
     function head ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('head');
         $piezas = $tag->iWantA();
-        $attr = new App\GetFirstChar ($attr);
-        $match = new App\ListaMatches ($attr->getFirstChar());
-        if($match->listaMatches() === 'noHayMatches') {
-            $piezas[2] = '';
-        }else{
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
-        }
+        $piezas[2] = '';
         return App\Ensamblar::ensamblar( $piezas , $content );
     }
 }
@@ -94,14 +87,7 @@ if(!function_exists('body')) {
     function body ( string|null $tag = null , string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('body');
         $piezas = $tag->iWantA();
-        $attr = new App\GetFirstChar ($attr);
-        $match = new App\ListaMatches ($attr->getFirstChar());
-        if($match->listaMatches() === 'noHayMatches') {
-            $piezas[2] = '';
-        }else{
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
-        }
+        $piezas[2] = '';
         return App\Ensamblar::ensamblar( $piezas , $content );
     }
 }
