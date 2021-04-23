@@ -424,8 +424,8 @@ los helpers html() y emptyHtml() , la diferencia entre ambas
 se puede notar si pensamos por ejemplo en visualizar :
 
 <pre>
-1- &lt;html**/html* 
-2- *html lang="en"**/html*
+1- &lt;html&gt;&lt;/html&gt;
+2- &lt;html lang="en"&gt;&lt;/html&gt;
 </pre>
 
 por ejemplo.
