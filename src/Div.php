@@ -4,6 +4,12 @@ namespace App;
 
 class Div extends Base implements TagInterface {
 
+    public function whatItIs(char|string $char){
+        return match($char){
+            "S" => "style=\""
+        };
+    }
+
     public function createOpenTag(array $attVal){
         $string = implode(" ",$attVal);
         return "<div ".$string.">";
