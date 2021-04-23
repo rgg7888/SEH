@@ -11,7 +11,9 @@ class Input extends Base implements TagInterface {
             "T" => "type=\"",
             "S" => "size=\"",
             "O" => "onkeyup=\"",
-            "V" => "value=\""
+            "V" => "value=\"",
+            "N" => "name=\"",
+            "P" => "placeholder=\""
         };
     }
 
