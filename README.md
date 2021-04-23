@@ -467,6 +467,7 @@ la pieza.
 acontinuacion te muestro los avances respecto a las etiquetas del head 
 una estructura basica en la version 0.0.2 se escribe asi :
 
+<pre>
 dt();
 lmh([
     head([
@@ -475,6 +476,7 @@ lmh([
     ]),
     body()
 ],'en');
+</pre>
 
 como puede notar los nombres de las funciones para las etiquetas son el mismo
 salvo que ahora el argumento null no es necesario agregarlo al inicio
