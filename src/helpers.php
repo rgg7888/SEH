@@ -116,7 +116,8 @@ if(!function_exists('metaGroup')) {
             $piezas[2] = ' charset="UTF-8"';
             $etiqueta01 = App\Ensamblar::ensamblar( $piezas );
             array_push($metaGroup,$etiqueta01);
-            #meta tag 2
+            #meta tag 2 
+            /*
             $tag02 = new App\IWantA ('meta');
             $piezas = $tag02->iWantA();
             $piezas[2] = ' name="description" content="'.$description.'"';
@@ -145,7 +146,7 @@ if(!function_exists('metaGroup')) {
             $piezas = $tag06->iWantA();
             $piezas[2] = ' http-equiv="X-UA-Compatible" content="ie=edge"';
             $etiqueta06 = App\Ensamblar::ensamblar( $piezas );
-            array_push($metaGroup,$etiqueta06);
+            array_push($metaGroup,$etiqueta06);*/
         return implode("",$metaGroup);
         //
     }
