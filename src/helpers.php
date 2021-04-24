@@ -91,6 +91,9 @@ if(!function_exists('lmh')) {
 
 if(!function_exists('head')) {
     function head ( string|array|null $content = null ) {
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
         $tag = new App\IWantA ('head');
         $piezas = $tag->iWantA();
         $piezas[2] = '';
@@ -100,6 +103,11 @@ if(!function_exists('head')) {
 
 if(!function_exists('body')) {
     function body ( string|array|null $content = null , string|null $attr = null ) {
+        
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
+        
         $tag = new App\IWantA ('body');
         $piezas = $tag->iWantA();
 
@@ -133,6 +141,11 @@ if(!function_exists('body')) {
 
 if(!function_exists('script')) {
     function script ( string|array|null $content = null , string|null $attr = null ) {
+        
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
+        
         $tag = new App\IWantA ('script');
         $piezas = $tag->iWantA();
 
@@ -166,6 +179,11 @@ if(!function_exists('script')) {
 
 if(!function_exists('button')) {
     function button ( string|array|null $content = null , string|null $attr = null ) {
+        
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
+        
         $tag = new App\IWantA ('button');
         $piezas = $tag->iWantA();
 
@@ -199,6 +217,11 @@ if(!function_exists('button')) {
 
 if(!function_exists('section')) {
     function section ( string|array|null $content = null , string|null $attr = null ) {
+        
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
+        
         $tag = new App\IWantA ('section');
         $piezas = $tag->iWantA();
 
@@ -232,6 +255,11 @@ if(!function_exists('section')) {
 
 if(!function_exists('title')) {
     function title ( string|array|null $content = null , string|null $attr = null ) {
+        
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
+        
         $tag = new App\IWantA ('title');
         $piezas = $tag->iWantA();
         $piezas[2] = '';
