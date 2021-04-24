@@ -31,6 +31,10 @@ class IWantA {
             break;
             case 'script': return ['<','script',' ','>','content','</script>'];
             break;
+            case 'section': return ['<','section',' ','>','content','</section>'];
+            break;
+            case 'button': return ['<','button',' ','>','content','</button>'];
+            break;
         }
     }
 }

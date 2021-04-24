@@ -149,6 +149,72 @@ if(!function_exists('script')) {
     }
 }
 
+if(!function_exists('button')) {
+    function button ( string|array|null $content = null , string|null $attr = null ) {
+        $tag = new App\IWantA ('button');
+        $piezas = $tag->iWantA();
+
+        if($attr === null) {
+            $piezas[2] = '';
+        }else{
+            $attrs = explode("|",$attr);
+            for($i = 0; $i < count($attrs); $i++){
+                $attr = new App\GetFirstChar ($attrs[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
+        }
+        $attrs = new App\GetFirstChar ($content);
+        $match = new App\ListaMatches ($attrs->getFirstChar());
+        if ($attr === null && $match->listaMatches() !== "noHayMatches"){
+            $attris = explode("|",$content);
+            for($i = 0; $i < count($attris); $i++){
+                $attr = new App\GetFirstChar ($attris[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
+            $content = null;
+        }
+        
+        return App\Ensamblar::ensamblar( $piezas , $content );
+    }
+}
+
+if(!function_exists('section')) {
+    function section ( string|array|null $content = null , string|null $attr = null ) {
+        $tag = new App\IWantA ('section');
+        $piezas = $tag->iWantA();
+
+        if($attr === null) {
+            $piezas[2] = '';
+        }else{
+            $attrs = explode("|",$attr);
+            for($i = 0; $i < count($attrs); $i++){
+                $attr = new App\GetFirstChar ($attrs[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
+        }
+        $attrs = new App\GetFirstChar ($content);
+        $match = new App\ListaMatches ($attrs->getFirstChar());
+        if ($attr === null && $match->listaMatches() !== "noHayMatches"){
+            $attris = explode("|",$content);
+            for($i = 0; $i < count($attris); $i++){
+                $attr = new App\GetFirstChar ($attris[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
+            $content = null;
+        }
+        
+        return App\Ensamblar::ensamblar( $piezas , $content );
+    }
+}
+
 if(!function_exists('title')) {
     function title ( string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('title');
