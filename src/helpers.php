@@ -91,10 +91,13 @@ if(!function_exists('body')) {
         if($attr === null) {
             $piezas[2] = '';
         }else{
-            $attr = new App\GetFirstChar ($attr);
-            $match = new App\ListaMatches ($attr->getFirstChar());
-            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
+            $attrs = explode("|",$attr);
+            for($i = 0; $i < count($attrs); $i++){
+                $attr = new App\GetFirstChar ($attrs[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
         }
         
         return App\Ensamblar::ensamblar( $piezas , $content );

@@ -21,7 +21,7 @@ class IWantA {
             break;
             case 'head': return ['<','head','attrs','>','content','</head>'];
             break;
-            case 'body': return ['<','body','attrs','>','content','</body>'];
+            case 'body': return ['<','body',' ','>','content','</body>'];
             break;
             case 'meta': return ['<','meta','attrs','','','/>'];
             break;
