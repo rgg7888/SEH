@@ -29,6 +29,8 @@ class IWantA {
             break;
             case 'title': return ['<','title','attrs','>','content','</title>'];
             break;
+            case 'script': return ['<','script',' ','>','content','</script>'];
+            break;
         }
     }
 }
