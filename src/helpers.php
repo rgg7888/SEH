@@ -104,6 +104,27 @@ if(!function_exists('body')) {
     }
 }
 
+if(!function_exists('script')) {
+    function script ( string|array|null $content = null , string|null $attr = null ) {
+        $tag = new App\IWantA ('script');
+        $piezas = $tag->iWantA();
+
+        if($attr === null) {
+            $piezas[2] = '';
+        }else{
+            $attrs = explode("|",$attr);
+            for($i = 0; $i < count($attrs); $i++){
+                $attr = new App\GetFirstChar ($attrs[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
+        }
+        
+        return App\Ensamblar::ensamblar( $piezas , $content );
+    }
+}
+
 if(!function_exists('title')) {
     function title ( string|array|null $content = null , string|null $attr = null ) {
         $tag = new App\IWantA ('title');
