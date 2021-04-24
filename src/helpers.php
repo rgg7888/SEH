@@ -209,16 +209,7 @@ if(!function_exists('section')) {
                 $piezas[2] .= ' '.$atributo;
             }
             $content = null;
-        }else{
-            $attrs = explode("|",$attr);
-            for($i = 0; $i < count($attrs); $i++){
-                $attr = new App\GetFirstChar ($attrs[$i]);
-                $match = new App\ListaMatches ($attr->getFirstChar());
-                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-                $piezas[2] .= ' '.$atributo;
-            }
         }
-
         
         return App\Ensamblar::ensamblar( $piezas , $content );
     }
