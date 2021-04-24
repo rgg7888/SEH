@@ -55,6 +55,11 @@ if(!function_exists('htm')) {
 
 if(!function_exists('lmh')) {
     function lmh ( string|array|null $content = null , string|null $attr = null ) {
+        
+        if ( is_array($content) ) {
+            $content = implode("",$content);
+        }
+        
         $tag = new App\IWantA ('html');
         $piezas = $tag->iWantA();
 
