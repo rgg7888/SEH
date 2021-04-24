@@ -120,6 +120,18 @@ if(!function_exists('script')) {
                 $piezas[2] .= ' '.$atributo;
             }
         }
+        $attrs = new App\GetFirstChar ($content);
+        $match = new App\ListaMatches ($attrs->getFirstChar());
+        if ($attr === null && $match->listaMatches() !== "noHayMatches"){
+            $attris = explode("|",$content);
+            for($i = 0; $i < count($attris); $i++){
+                $attr = new App\GetFirstChar ($attris[$i]);
+                $match = new App\ListaMatches ($attr->getFirstChar());
+                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                $piezas[2] .= ' '.$atributo;
+            }
+            $content = null;
+        }
         
         return App\Ensamblar::ensamblar( $piezas , $content );
     }
