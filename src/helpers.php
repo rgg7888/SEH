@@ -65,7 +65,13 @@ if(!function_exists('lmh')) {
             $piezas[2] = ' '.$atributo;
             echo App\Ensamblar::ensamblar( $piezas );
         } else {
-            $attr = new App\GetFirstChar ('l'.$attr);
+            
+            if($attr === null){
+                $attr = new App\GetFirstChar ($attr);
+            }else{
+                $attr = new App\GetFirstChar ('l'.$attr);
+            }
+            
             $match = new App\ListaMatches ($attr->getFirstChar());
             $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
             $piezas[2] = ' '.$atributo;
