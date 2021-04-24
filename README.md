@@ -493,3 +493,26 @@ como segundo parametro los keywords o palabras clave
 en formato string divididas por coma y finalmente el nombre del 
 autor , esto nos servira para el seo de la pagina web y como 
 buenas practicas de programacion
+
+ahora es mas facil incrementar las funcionalidades de seh
+solo debemos enfocarnos en tres archivos
+
+IWantA es donde podemos encontrar las definiciones de cada etiqueta
+y basta solo con modificar los valores del arreglo que las representa
+
+ListaMatches aqui solamente basta con agregar la letra y su valor
+para tener mas atributos disponibles 
+
+helpers aqui es donde se une todo el poder de seh para 
+crear todas y cada una de las etiquetas
+
+para agregar mas de un atributo ahora he incluido el caracter |
+de esta forma evitamos el inconveniente de los espacios con la 
+version anterior y ya no es necesario utilizar la funcion cls()
+
+un ejemplo para ilustrar lo antes mencionado seira la funcion lnk()
+la cual es la equivalente a la funcion lk() de la version anterior
+
+pero ahora se le agregaran los atributos rel y href asi :
+
+lnk("rstylesheet|h#");
