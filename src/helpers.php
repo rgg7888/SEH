@@ -161,7 +161,7 @@ if(!function_exists('lnk')) {
         $piezas = $tag->iWantA();
         $attrs = explode("|",$attr);
         for($i = 0; $i < count($attrs); $i++){
-            $attr = new App\GetFirstChar ($attr);
+            $attr = new App\GetFirstChar ($attrs[$i]);
             $match = new App\ListaMatches ($attr->getFirstChar());
             $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
             $piezas[2] .= ' '.$atributo;
