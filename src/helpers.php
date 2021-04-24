@@ -154,3 +154,18 @@ if(!function_exists('metaGroup')) {
         //
     }
 }
+
+if(!function_exists('lnk')) {
+    function lnk ( string|null $attr = null ) {
+        $tag = new App\IWantA ('link');
+        $piezas = $tag->iWantA();
+        $attrs = explode("|",$attr);
+        for($i = 0; $i < count($attrs); $i++){
+            $attr = new App\GetFirstChar ($attr);
+            $match = new App\ListaMatches ($attr->getFirstChar());
+            $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+            $piezas[2] .= ' '.$atributo;
+        }
+        return App\Ensamblar::ensamblar( $piezas );
+    }
+}

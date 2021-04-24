@@ -22,6 +22,8 @@ class ListaMatches {
                 "l" => "lang=\"",
                 "c" => "class=\"",
                 "i" => "id=\"",
+                "r" => "rel=\"",
+                "h" => "href=\"",
                 default => "noHayMatches"
             };
         }catch(Exception $e){

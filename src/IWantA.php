@@ -25,6 +25,8 @@ class IWantA {
             break;
             case 'meta': return ['<','meta','attrs','','','/>'];
             break;
+            case 'link': return ['<','link','attrs','','','/>'];
+            break;
             case 'title': return ['<','title','attrs','>','content','</title>'];
             break;
         }
