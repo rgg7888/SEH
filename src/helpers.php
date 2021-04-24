@@ -65,7 +65,7 @@ if(!function_exists('lmh')) {
             $piezas[2] = ' '.$atributo;
             echo App\Ensamblar::ensamblar( $piezas );
         } else {
-            
+
             if($attr === null){
                 $attr = new App\GetFirstChar ($attr);
             }else{
@@ -74,7 +74,11 @@ if(!function_exists('lmh')) {
             
             $match = new App\ListaMatches ($attr->getFirstChar());
             $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-            $piezas[2] = ' '.$atributo;
+            if($atributo === "noHayMatches") {
+                $piezas[2] = '';
+            }else{
+                $piezas[2] = ' '.$atributo;
+            }
             echo App\Ensamblar::ensamblar( $piezas , $content );
         }
     }
