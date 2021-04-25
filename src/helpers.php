@@ -312,7 +312,7 @@ if(!function_exists('data_base_emulation')) {
 }
 
 if(!function_exists('my_site')) {
-    function pagina($contenido = null,string $atributos = null) {
+    function my_site($contenido = null,string $atributos = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('doctype');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
         echo App\ConstruirPieza::ensamblar( $piezas );
