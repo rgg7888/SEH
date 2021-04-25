@@ -290,9 +290,14 @@ if(!function_exists('lnk')) {
 #spanish version mas fino que nunca =)
 
 if(!function_exists('pagina')) {
-    function pagina() {
+    function pagina($contenido,string $atributos = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('doctype');
         $piezas = $etiqueta->crearPiezas();
         echo App\ConstruirPieza::ensamblar( $piezas );
+        $etiqueta->crearEtiqueta('html');
+        $piezas = $etiqueta->crearPiezas();
+        $atributosDeLaEtiqueta = new CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new AgregarLosAtributosALasPiezasYElContenido($contenido);
+        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( $piezas , $atributosDeLaEtiqueta->crearAtributos($atributos) ) );
     }
 }

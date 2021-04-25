@@ -10,6 +10,10 @@ class QuieroCrearUnaEtiqueta {
         $this->etiqueta = $etiqueta;
     }
 
+    public function crearEtiqueta(string $etiqueta) {
+        $this->etiqueta = $etiqueta;
+    }
+
     public function obtenerEtiqueta () {
         return $this->etiqueta;
     }
@@ -17,6 +21,8 @@ class QuieroCrearUnaEtiqueta {
     public function crearPiezas () {
         switch ( $this->obtenerEtiqueta() ) {
             case 'doctype': return ['<','!DOCTYPE',' html','>'];
+            break;
+            case 'html': return ['<','html ','0','>','1','<','/','html','>'];
             break;
         }
     }
