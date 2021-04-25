@@ -296,8 +296,8 @@ if(!function_exists('pagina')) {
         echo App\ConstruirPieza::ensamblar( $piezas );
         $etiqueta->crearEtiqueta('html');
         $piezas = $etiqueta->crearPiezas();
-        $atributosDeLaEtiqueta = new CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new AgregarLosAtributosALasPiezasYElContenido($contenido);
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
         echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( $piezas , $atributosDeLaEtiqueta->crearAtributos($atributos) ) );
     }
 }
