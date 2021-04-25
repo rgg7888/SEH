@@ -53,6 +53,14 @@ if(!function_exists('htm')) {
  * Lenguaje de marcado de hipertexto (lmh)
  */
 
+ if(!function_exists('doctype')) {
+     function doctype() {
+         $tag = new App\IWantA('doctype');
+         $piezas = $tag->iWantA();
+         echo App\Ensamblar::ensamblar( $piezas );
+     }
+ }
+
 if(!function_exists('lmh')) {
     function lmh ( string|array|null $content = null , string|null $attr = null ) {
         

@@ -17,6 +17,8 @@ class IWantA {
 
     public function iWantA () {
         switch ( $this->getTag() ) {
+            case 'doctype': return ['<','!DOCTYPE',' html','>','',''];
+            break;
             case 'html': return ['<','html','attrs','>','content','</html>'];
             break;
             case 'head': return ['<','head','attrs','>','content','</head>'];
