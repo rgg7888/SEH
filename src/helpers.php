@@ -290,7 +290,7 @@ if(!function_exists('lnk')) {
 #spanish version mas fino que nunca =)
 
 if(!function_exists('pagina')) {
-    function pagina($contenido,string $atributos = null) {
+    function pagina($contenido = null,string $atributos = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('doctype');
         $piezas = $etiqueta->crearPiezas();
         echo App\ConstruirPieza::ensamblar( $piezas );
