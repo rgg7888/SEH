@@ -286,3 +286,13 @@ if(!function_exists('lnk')) {
         return App\Ensamblar::ensamblar( $piezas );
     }
 }
+
+#spanish version mas fino que nunca =)
+
+if(!function_exists('pagina')) {
+    function pagina() {
+        $etiqueta = new App\QuieroCrearUnaEtiqueta('doctype');
+        $piezas = $etiqueta->crearPiezas();
+        echo App\ConstruirPieza::ensamblar( $piezas );
+    }
+}
