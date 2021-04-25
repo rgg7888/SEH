@@ -26,4 +26,14 @@ class QuieroCrearUnaEtiqueta {
             break;
         }
     }
+
+    public function listaDinamicaDeEtiquetasYpiezas(array $id_pieza) {
+        $etiquetas = array_keys($id_pieza);
+        $piezas = array_values($id_pieza);
+        for($i = 0; $i < count($etiquetas); $i++) {
+            if( $this->obtenerEtiqueta() === $etiquetas[$i] ) {
+                return $piezas[$i];
+            }
+        }
+    }
 }
