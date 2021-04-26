@@ -101,8 +101,11 @@ if(!function_exists('body')) {
 
 if(!function_exists('script')) {
     function script ( string|array|null $content = null , string|null $attr = null ) {
+
+        $evaluarAttributos = true;
         
         if ( is_array($content) ) {
+            $evaluarAttributos = end($content);
             $content = implode("",$content);
         }
         
@@ -122,15 +125,19 @@ if(!function_exists('script')) {
         }
         $attrs = new App\GetFirstChar ($content);
         $match = new App\ListaMatches ($attrs->getFirstChar());
-        if ($attr === null && $match->listaMatches() !== "noHayMatches"){
-            $attris = explode("|",$content);
-            for($i = 0; $i < count($attris); $i++){
-                $attr = new App\GetFirstChar ($attris[$i]);
-                $match = new App\ListaMatches ($attr->getFirstChar());
-                $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
-                $piezas[2] .= ' '.$atributo;
+        if($evaluarAttributos) {
+
+            if ($attr === null && $match->listaMatches() !== "noHayMatches"){
+                $attris = explode("|",$content);
+                for($i = 0; $i < count($attris); $i++){
+                    $attr = new App\GetFirstChar ($attris[$i]);
+                    $match = new App\ListaMatches ($attr->getFirstChar());
+                    $atributo = App\CreateAttr::createAttr( $match->listaMatches() , $attr->getResto() );
+                    $piezas[2] .= ' '.$atributo;
+                }
+                $content = null;
             }
-            $content = null;
+
         }
         
         return App\Ensamblar::ensamblar( $piezas , $content );
