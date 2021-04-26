@@ -15,8 +15,26 @@ class CrearAtributosDeLaEtiquetaTest extends TestCase {
         #$this->assertEquals( 'recibi un array' , $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len|imyId') )[1] );
         $this->assertEquals( 'l' ,  $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len') )[0][0] );
         $this->assertEquals( 'en' ,  $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len') )[0][1] );
-        $this->assertEquals( 'lang="en"' ,  $etiqueta->crearAtributos('len') );
-        $this->assertEquals( 'class="myClass"id="myId"' ,  $etiqueta->crearAtributos('cmyClass|imyId') );
+        $this->assertEquals( 'lang="en"' ,  $etiqueta->crearAtributos('len',[
+            "l" => "lang=",
+            "c" => "class=",
+            "i" => "id=",
+            "r" => "rel=",
+            "h" => "href=",
+            "s" => "src=",
+            "d" => "defer",
+            "cr" => "crossorigin="
+        ]) );
+        $this->assertEquals( 'class="myClass"id="myId"' ,  $etiqueta->crearAtributos('cmyClass|imyId',[
+            "l" => "lang=",
+            "c" => "class=",
+            "i" => "id=",
+            "r" => "rel=",
+            "h" => "href=",
+            "s" => "src=",
+            "d" => "defer",
+            "cr" => "crossorigin="
+        ]) );
         $this->assertEquals( '' ,  $etiqueta->crearAtributos() );
         /*$this->assertEquals( 'this is level 2 in the string section' ,  
         $etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true) );
@@ -25,6 +43,8 @@ class CrearAtributosDeLaEtiquetaTest extends TestCase {
         */
         #$this->assertEquals('cr',$etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true));
         #$this->assertEquals('anonimous',$etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true));
-        $this->assertEquals( 'crossorigin="anonimous"' ,  $etiqueta->crearAtributos('cranonimous' , true) );
+        $this->assertEquals( 'crossorigin="anonimous"' ,  $etiqueta->crearAtributos('cranonimous', [
+            'cr' => 'crossorigin='
+        ] , true) );
     }
 }

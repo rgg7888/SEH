@@ -4,26 +4,7 @@ namespace App;
 
 class CrearAtributosDeLaEtiqueta {
 
-    private array $listaDeAtributos = [
-        "l" => "lang=",
-        "c" => "class=",
-        "i" => "id=",
-        "r" => "rel=",
-        "h" => "href=",
-        "s" => "src=",
-        "d" => "defer",
-        "cr" => "crossorigin="
-    ];
-
     public function __construct() {}
-
-    public function crearListaDeAtributos( array $listaDeAtributos ) {
-        $this->listaDeAtributos = $listaDeAtributos;
-    }
-
-    public function obtenerListaDeAtributos() {
-        return $this->listaDeAtributos;
-    }
 
     public function separarAtributos( string $x = null) {
         if($x !== null) {
@@ -95,12 +76,12 @@ class CrearAtributosDeLaEtiqueta {
         
     }
 
-    public function crearAtributos( string $listaDeAtributos = null , $cambiarNivel = false) {
+    public function crearAtributos( string $listaDeAtributos = null , array $dataBase = [], $cambiarNivel = false) {
         if($listaDeAtributos !== null) {
             $listaDeAtributosConstruidos = [];
             $arrayDeAtributos = $this->separarAtributos($listaDeAtributos);
-            $clavesDeLosAtributos = array_keys( $this->obtenerListaDeAtributos() );
-            $valoresDeLasClavesDeLosAtributos = array_values( $this->obtenerListaDeAtributos() );
+            $clavesDeLosAtributos = array_keys( $dataBase );
+            $valoresDeLasClavesDeLosAtributos = array_values( $dataBase );
             $arrayDeAtributosIndividuales = $this->dividirAtributosIndividualmente( $arrayDeAtributos , $cambiarNivel );
             for($i = 0; $i < count($arrayDeAtributosIndividuales); $i++) {
                 for($j = 0; $j < count($clavesDeLosAtributos); $j++) {
