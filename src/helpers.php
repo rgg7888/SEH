@@ -331,7 +331,7 @@ if(!function_exists('get_simple')) {
      * asignados en el documento html.
      */
     function get_simple(int $eventos,array $botones,array $ids,array $funciones,string $url) {
-        $eventosClick = new CrearEventosClick($eventos,$botones,$ids,$funciones);
+        $eventosClick = new App\CrearEventosClick($eventos,$botones,$ids,$funciones);
         return $eventosClick->obtenerDatosGetSuperSimple($url,$eventosClick->escribirScript());
     }
 }
