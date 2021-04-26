@@ -50,8 +50,7 @@ class CrearEventosClick {
 
     public function obtenerDatosGetSuperSimple(string $url, string $script) {
         $numFunciones = $this->obtenerEventos();
-        #$peticion = "const xhr = new XMLHttpRequest();"."xhr.open(".htmlspecialchars("'GET','".$url."');")."xhr.send();";
-        $peticion = "_";
+        $peticion = "const xhr = new XMLHttpRequest();"."xhr.open(".htmlspecialchars("'GET'_'".$url."');")."xhr.send();";
         $js = '';
         for($i = 0; $i < $numFunciones; $i++) {
             $js = str_replace($i,$peticion,$script);
@@ -63,9 +62,9 @@ class CrearEventosClick {
         $script = [];
         $numeroDeEventos = $this->obtenerEventos();
         for($i = 0; $i < $numeroDeEventos; $i++) {
-            array_push($script, "Const ".$this->obtenerBotones()[$i]." = document.getElementById('".$this->obtenerIds()[$i]."');" );
+            array_push($script, "_const ".$this->obtenerBotones()[$i]." = document.getElementById('".$this->obtenerIds()[$i]."');" );
             array_push($script, "const ".$this->obtenerFunciones()[$i]." = () => {".$i."};" );
-            array_push($script, $this->obtenerBotones()[$i].".addEventListener('click',".$this->obtenerFunciones()[$i].");" );
+            array_push($script, $this->obtenerBotones()[$i].".addEventListener('click'_".$this->obtenerFunciones()[$i].");" );
         }
         return implode("",$script);
     }
