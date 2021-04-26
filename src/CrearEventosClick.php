@@ -52,7 +52,7 @@ class CrearEventosClick {
         $numFunciones = $this->obtenerEventos();
         #$peticion = "const xhr = new XMLHttpRequest();"."xhr.open(".htmlspecialchars("'GET','".$url."');")."xhr.send();";
         #$peticion = "xhr.open(".");";
-        $peticion = "'GET','https://somenting.in'";
+        $peticion = "'GET'&comma;'https://somenting.in'";
         $js = '';
         for($i = 0; $i < $numFunciones; $i++) {
             $js = str_replace($i,$peticion,$script);
