@@ -325,6 +325,11 @@ if(!function_exists('my_site')) {
 }
 
 if(!function_exists('get-simple')) {
+    /**
+     * el numero de eventos debe de coincidir con el numero de elementos
+     * en cada uno de los arrays y, los ids deben coincidir con los 
+     * asignados en el documento html.
+     */
     function get_simple(int $eventos,array $botones,array $ids,array $funciones,string $url) {
         $eventosClick = new CrearEventosClick($eventos,$botones,$ids,$funciones);
         return $eventosClick->obtenerDatosGetSuperSimple($url,$eventosClick->escribirScript());
