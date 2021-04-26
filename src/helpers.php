@@ -50,6 +50,8 @@ if(!function_exists('head')) {
     function head($contenido = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('head');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
         echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
             $piezas , $atributosDeLaEtiqueta->crearAtributos(
                 $atributos , 
@@ -64,6 +66,8 @@ if(!function_exists('title')) {
     function title($contenido = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('title');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
         echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
             $piezas , $atributosDeLaEtiqueta->crearAtributos(
                 $atributos , 
