@@ -66,7 +66,7 @@ class CrearEventosClick {
             array_push($script, "const ".$this->obtenerFunciones()[$i]." = () => {".$i."};" );
             array_push($script, $this->obtenerBotones()[$i].".addEventListener('click'_".$this->obtenerFunciones()[$i].");" );
         }
-        return implode("",$script);
+        return str_replace(",","",str_replace("_",",",implode("",$script)));
     }
 
 }
