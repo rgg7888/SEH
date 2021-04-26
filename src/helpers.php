@@ -5,8 +5,8 @@ if(!function_exists('data_base_emulation')) {
         return [
             'doctype' => ['<','!DOCTYPE',' html','>'],
             'html' => ['<','html ','0','>','1','<','/','html','>'],
-            'head' => ['<','head','>','0','<','/','head','>'],
-            'title' => ['<','title','>','0','<','/','title','>'],
+            'head' => ['<','head','>','1','<','/','head','>'],
+            'title' => ['<','title','>','1','<','/','title','>'],
             'body' => ['<','body ','0','>','1','<','/','body','>']
         ];
     }
