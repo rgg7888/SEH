@@ -12,6 +12,7 @@ class CrearAtributosDeLaEtiqueta {
         "h" => "href=",
         "s" => "src=",
         "d" => "defer",
+        "cr" => "crossorigin="
     ];
 
     public function __construct() {}
@@ -44,7 +45,7 @@ class CrearAtributosDeLaEtiqueta {
         
     }
 
-    public function dividirAtributosIndividualmente( $AtributosEnCrudo = null) {
+    public function dividirAtributosIndividualmente( $AtributosEnCrudo = null , $cambiarNivel = false) {
         if($AtributosEnCrudo !== null) {
             $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
             switch ($AtributosEnCrudo) {
@@ -53,22 +54,30 @@ class CrearAtributosDeLaEtiqueta {
             }
             if($arrayDeLaListaDeLasClavesYValoresPorAtributo[0] === 'string') {
                 #array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,"recibi un string");
-                $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
-                $atributo = [
-                    $AtributosEnCrudo[0],
-                    substr( $AtributosEnCrudo , 1 )
-                ];
-                array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,$atributo);
+                if($cambiarNivel) {
+                    return "this is level 2 in the string section";
+                }else{
+                    $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
+                    $atributo = [
+                        $AtributosEnCrudo[0],
+                        substr( $AtributosEnCrudo , 1 )
+                    ];
+                    array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,$atributo);
+                }
             }else{
                 #array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,"recibi un array");
-                $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
-                $atributo = [];
-                for($i = 0; $i < count($AtributosEnCrudo); $i++) {
-                    $atributo = [
-                        $AtributosEnCrudo[$i][0],
-                        substr($AtributosEnCrudo[$i],1)
-                    ];
-                    array_push( $arrayDeLaListaDeLasClavesYValoresPorAtributo , $atributo );
+                if($cambiarNivel){
+                    return "this is level 2 in the array section";
+                }else{
+                    $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
+                    $atributo = [];
+                    for($i = 0; $i < count($AtributosEnCrudo); $i++) {
+                        $atributo = [
+                            $AtributosEnCrudo[$i][0],
+                            substr($AtributosEnCrudo[$i],1)
+                        ];
+                        array_push( $arrayDeLaListaDeLasClavesYValoresPorAtributo , $atributo );
+                    }
                 }
             }
             return $arrayDeLaListaDeLasClavesYValoresPorAtributo;
@@ -78,13 +87,13 @@ class CrearAtributosDeLaEtiqueta {
         
     }
 
-    public function crearAtributos( string $listaDeAtributos = null) {
+    public function crearAtributos( string $listaDeAtributos = null , $cambiarNivel = false) {
         if($listaDeAtributos !== null) {
             $listaDeAtributosConstruidos = [];
             $arrayDeAtributos = $this->separarAtributos($listaDeAtributos);
             $clavesDeLosAtributos = array_keys( $this->obtenerListaDeAtributos() );
             $valoresDeLasClavesDeLosAtributos = array_values( $this->obtenerListaDeAtributos() );
-            $arrayDeAtributosIndividuales = $this->dividirAtributosIndividualmente( $arrayDeAtributos );
+            $arrayDeAtributosIndividuales = $this->dividirAtributosIndividualmente( $arrayDeAtributos , $cambiarNivel );
             for($i = 0; $i < count($arrayDeAtributosIndividuales); $i++) {
                 for($j = 0; $j < count($clavesDeLosAtributos); $j++) {
                     if( $arrayDeAtributosIndividuales[$i][0] === $clavesDeLosAtributos[$j] ) {

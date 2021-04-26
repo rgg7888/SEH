@@ -18,5 +18,9 @@ class CrearAtributosDeLaEtiquetaTest extends TestCase {
         $this->assertEquals( 'lang="en"' ,  $etiqueta->crearAtributos('len') );
         $this->assertEquals( 'class="myClass"id="myId"' ,  $etiqueta->crearAtributos('cmyClass|imyId') );
         $this->assertEquals( '' ,  $etiqueta->crearAtributos() );
+        $this->assertEquals( 'this is level 2 in the string section' ,  
+        $etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true) );
+        $this->assertEquals( 'this is level 2 in the array section' ,  
+        $etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('s#|cranonimous'),true) );
     }
 }
