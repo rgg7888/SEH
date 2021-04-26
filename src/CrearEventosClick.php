@@ -50,7 +50,7 @@ class CrearEventosClick {
 
     public function obtenerDatosGetSuperSimple(string $url, string $script) {
         $numFunciones = $this->obtenerEventos();
-        $X = "&comma;";
+        $X = ",";
         $peticion = <<<EOD
         "const xhr = new XMLHttpRequest();"."xhr.open("."'GET'".$X."'".$url."');"."xhr.send();"
         EOD;
@@ -62,7 +62,7 @@ class CrearEventosClick {
     }
 
     public function escribirScript() {
-        $X = "&comma;";
+        $X = ",";
         $script = [];
         $numeroDeEventos = $this->obtenerEventos();
         for($i = 0; $i < $numeroDeEventos; $i++) {
