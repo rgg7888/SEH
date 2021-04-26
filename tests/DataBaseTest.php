@@ -5,7 +5,7 @@ use App\DataBase;
 
 class DataBaseTest extends TestCase
 {
-
+/*
     public function test_create_a_dataBase_Mysqli_Connection()
     {
         $connection = new DataBase("localhost:81","root","","mysqli");
@@ -53,5 +53,6 @@ class DataBaseTest extends TestCase
         $this->assertEquals("Database created successfully", $createDb->getMessage());
 
     }
+    */
 
 }

@@ -55,7 +55,8 @@ class CrearAtributosDeLaEtiqueta {
             if($arrayDeLaListaDeLasClavesYValoresPorAtributo[0] === 'string') {
                 #array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,"recibi un string");
                 if($cambiarNivel) {
-                    return "this is level 2 in the string section";
+                    #return "this is level 2 in the string section";
+                    return substr($AtributosEnCrudo , 0 , 2);
                 }else{
                     $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
                     $atributo = [
@@ -67,7 +68,7 @@ class CrearAtributosDeLaEtiqueta {
             }else{
                 #array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,"recibi un array");
                 if($cambiarNivel){
-                    return "this is level 2 in the array section";
+                    #return "this is level 2 in the array section";
                 }else{
                     $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
                     $atributo = [];
