@@ -22,13 +22,10 @@ class AgregarLosAtributosALasPiezasYElContenido {
         $contenido = is_array($this->obtenerContenido()) ? implode("",$this->obtenerContenido()) : $this->obtenerContenido();
         $cadenaDePiezas = implode("",$arrayDePiezas);
 
-        if($cadenaDeAtributos === null) {
-            $etiqueta = str_replace('',$cadenaDeAtributos.',',$cadenaDePiezas);
-            $etiqueta = str_replace('0',$contenido.',',$etiqueta);
-        }else{
-            $etiqueta = str_replace('0',$cadenaDeAtributos.',',$cadenaDePiezas);
-            $etiqueta = str_replace('0',$contenido.',',$etiqueta);
-        }
+        
+        $etiqueta = str_replace('0',$cadenaDeAtributos.',',$cadenaDePiezas);
+        $etiqueta = str_replace('1',$contenido.',',$etiqueta);
+        
         
         $etiqueta = explode(",",$etiqueta);
         return $etiqueta;
