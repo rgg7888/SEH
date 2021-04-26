@@ -50,7 +50,13 @@ if(!function_exists('head')) {
     function head($contenido = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('head');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        echo App\ConstruirPieza::ensamblar( $piezas );
+        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
     }
 }
 
@@ -58,7 +64,13 @@ if(!function_exists('title')) {
     function title($contenido = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('title');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        echo App\ConstruirPieza::ensamblar( $piezas );
+        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
     }
 }
 
