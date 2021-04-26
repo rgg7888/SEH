@@ -50,7 +50,7 @@ class CrearEventosClick {
 
     public function obtenerDatosGetSuperSimple(string $url, string $script) {
         $numFunciones = $this->obtenerEventos();
-        $coma = ",-";
+        $coma = "-";
         $peticion = "const xhr = new XMLHttpRequest();"."xhr.open("."'GET'".$coma."'".$url."');"."xhr.send();";
         $js = '';
         for($i = 0; $i < $numFunciones; $i++) {
