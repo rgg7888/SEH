@@ -324,7 +324,7 @@ if(!function_exists('my_site')) {
     }
 }
 
-if(!function_exists('get-simple')) {
+if(!function_exists('get_simple')) {
     /**
      * el numero de eventos debe de coincidir con el numero de elementos
      * en cada uno de los arrays y, los ids deben coincidir con los 
