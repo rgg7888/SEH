@@ -323,3 +323,10 @@ if(!function_exists('my_site')) {
         echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( $piezas , $atributosDeLaEtiqueta->crearAtributos($atributos) ) );
     }
 }
+
+if(!function_exists('get-simple')) {
+    function get_simple(int $eventos,array $botones,array $ids,array $funciones,string $url) {
+        $eventosClick = new CrearEventosClick($eventos,$botones,$ids,$funciones);
+        return $eventosClick->obtenerDatosGetSuperSimple($url,$eventosClick->escribirScript());
+    }
+}
