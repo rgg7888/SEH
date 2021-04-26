@@ -56,7 +56,10 @@ class CrearEventosClick {
         for($i = 0; $i < $numFunciones; $i++) {
             $js = str_replace($i,$peticion,$script);
         }
-        return $js;
+        #return $js;
+        $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+        fwrite($myfile, $js);
+        fclose($myfile);
     }
 
     public function escribirScript() {
