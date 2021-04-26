@@ -61,3 +61,19 @@ if(!function_exists('title')) {
         echo App\ConstruirPieza::ensamblar( $piezas );
     }
 }
+
+if(!function_exists('body')) {
+    function body($contenido = null,string $atributos = null , $cambiarNivel = false) {
+        $etiqueta->crearEtiqueta('body');
+        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
+    }
+}
