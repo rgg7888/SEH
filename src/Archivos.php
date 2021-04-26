@@ -13,8 +13,14 @@ class Archivos {
     }
 
     public function crearArchivo() {
-        $myfile = fopen("newfile.js", "w") or die("Unable to open file!");
+        /*$myfile = fopen("newfile.js", "w") or die("Unable to open file!");
         fwrite($myfile, $this->getScript());
+        fclose($myfile);*/
+        $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+        $txt = "John Doe\n";
+        fwrite($myfile, $txt);
+        $txt = "Jane Doe\n";
+        fwrite($myfile, $txt);
         fclose($myfile);
     }
 
