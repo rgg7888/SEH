@@ -18,15 +18,6 @@ class QuieroCrearUnaEtiqueta {
         return $this->etiqueta;
     }
 
-    public function crearPiezas () {
-        switch ( $this->obtenerEtiqueta() ) {
-            case 'doctype': return ['<','!DOCTYPE',' html','>'];
-            break;
-            case 'html': return ['<','html ','0','>','1','<','/','html','>'];
-            break;
-        }
-    }
-
     public function listaDinamicaDeEtiquetasYpiezas(array $id_pieza) {
         $etiquetas = array_keys($id_pieza);
         $piezas = array_values($id_pieza);
