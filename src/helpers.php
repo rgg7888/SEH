@@ -342,3 +342,10 @@ if(!function_exists('get_simple')) {
         return $eventosClick->obtenerDatosGetSuperSimple($url,$eventosClick->escribirScript());
     }
 }
+
+if(!function_exists('crearArchivo')) {
+    function crearArchivo() {
+        $crearArchivo = new App\Archivos();
+        $crearArchivo->crearArchivo();
+    }
+}
