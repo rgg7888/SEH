@@ -21,12 +21,11 @@ class AgregarLosAtributosALasPiezasYElContenido {
     public function unir(array $arrayDePiezas , string $cadenaDeAtributos) {
         $contenido = is_array($this->obtenerContenido()) ? implode("",$this->obtenerContenido()) : $this->obtenerContenido();
         $cadenaDePiezas = implode("",$arrayDePiezas);
-
-        
+        var_dump($cadenaDePiezas);
         $etiqueta = str_replace('0',$cadenaDeAtributos.',',$cadenaDePiezas);
+        var_dump($etiqueta);
         $etiqueta = str_replace('1',$contenido.',',$etiqueta);
-        
-        
+        var_dump($etiqueta);
         $etiqueta = explode(",",$etiqueta);
         return $etiqueta;
     }
