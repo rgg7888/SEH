@@ -51,7 +51,9 @@ class CrearEventosClick {
     public function obtenerDatosGetSuperSimple(string $url, string $script) {
         $numFunciones = $this->obtenerEventos();
         $X = "&comma;";
-        $peticion = "const xhr = new XMLHttpRequest();"."xhr.open("."'GET'".$X."'".$url."');"."xhr.send();";
+        $peticion = <<<EOD
+        "const xhr = new XMLHttpRequest();"."xhr.open("."'GET'".$X."'".$url."');"."xhr.send();"
+        EOD;
         $js = '';
         for($i = 0; $i < $numFunciones; $i++) {
             $js = str_replace($i,$peticion,$script);
