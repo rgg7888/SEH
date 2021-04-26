@@ -54,9 +54,16 @@ class CrearAtributosDeLaEtiqueta {
             }
             if($arrayDeLaListaDeLasClavesYValoresPorAtributo[0] === 'string') {
                 #array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,"recibi un string");
-                if($cambiarNivel) {
+                if($cambiarNivel) {#CREAR ATRIBUTOS NIVEL DOS , TOMANDO 2 CARACTERES DE REFERENCIA
                     #return "this is level 2 in the string section";
-                    return substr($AtributosEnCrudo , 0 , 2);
+                    #return substr($AtributosEnCrudo , 0 , 2);
+                    #return substr($AtributosEnCrudo , 2);
+                    $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
+                    $atributo = [
+                        substr($AtributosEnCrudo , 0 , 2),
+                        substr( $AtributosEnCrudo , 2 )
+                    ];
+                    array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,$atributo);
                 }else{
                     $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
                     $atributo = [

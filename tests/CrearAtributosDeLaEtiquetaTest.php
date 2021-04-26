@@ -23,6 +23,8 @@ class CrearAtributosDeLaEtiquetaTest extends TestCase {
         $this->assertEquals( 'this is level 2 in the array section' ,  
         $etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('s#|cranonimous'),true) );
         */
-        $this->assertEquals('cr',$etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true));
+        #$this->assertEquals('cr',$etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true));
+        #$this->assertEquals('anonimous',$etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true));
+        $this->assertEquals( 'crossorigin="anonimous"' ,  $etiqueta->crearAtributos('cranonimous' , true) );
     }
 }

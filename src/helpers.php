@@ -591,21 +591,6 @@ if(!function_exists('li')) {
     }
 }
 
-#javascript functions
-
-if(!function_exists('changeContentOf')) {
-    function changeContentOf (string $elementId, string $fileName) {
-        $changeContent = new App\JsFuncMaker("loadDoc");
-        return $changeContent->make($changeContent->changeContent($elementId,$fileName));
-    }
-}
-
-if(!function_exists('jfm')) {
-    function jsm (string $functionName) {
-        return $changeContent = new App\JsFuncMaker($functionName);
-    }
-}
-
 #selfClosing Tags
 
 if(!function_exists('img')) {
