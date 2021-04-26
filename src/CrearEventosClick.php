@@ -57,7 +57,7 @@ class CrearEventosClick {
             $js = str_replace($i,$peticion,$script);
         }
         #return $js;
-        $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+        $myfile = fopen("newfile.txt", "x") or die("Unable to open file!");
         fwrite($myfile, $js);
         fclose($myfile);
     }
