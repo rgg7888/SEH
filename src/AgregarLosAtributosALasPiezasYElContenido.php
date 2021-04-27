@@ -6,7 +6,7 @@ class AgregarLosAtributosALasPiezasYElContenido {
 
     private $contenido;
 
-    public function __construct($contenido) {
+    public function __construct($contenido = null) {
         $this->contenido = $contenido;
     }
 

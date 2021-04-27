@@ -92,4 +92,33 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
 
     }
 
+    public function test_unir_etiqueta_atributos_contenido_meta() {
+
+        $etiqueta = new QuieroCrearUnaEtiqueta('meta');
+        $atributosDeLaEtiqueta = new CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new AgregarLosAtributosALasPiezasYElContenido();
+
+        $this->assertEquals( '<meta charset="UTF-8"/>' ,  implode("", $piezasDeLaEtiqueta->unir( 
+            $etiqueta->listaDinamicaDeEtiquetasYpiezas([
+            'doctype' => ['<','!DOCTYPE',' html','>'],
+            'html' => ['<','html ','0','>','1','<','/','html','>'],
+            'head' => ['<','head','>','1','<','/','head','>'],
+            'meta' => ['<','meta ','0','/','>'],
+            'title' => ['<','title','>','1','<','/','title','>'],
+            'body' => ['<','body ','0','>','1','<','/','body','>']
+            ]) , $atributosDeLaEtiqueta->crearAtributos('chUTF-8',[
+                "l" => "lang=",
+                "c" => "class=",
+                "i" => "id=",
+                "r" => "rel=",
+                "h" => "href=",
+                "s" => "src=",
+                "d" => "defer",
+                "cr" => "crossorigin=",
+                "ch" => "charset="
+            ],true) 
+        ) ) );
+
+    }
+
 }

@@ -6,6 +6,7 @@ if(!function_exists('data_base_emulation')) {
             'doctype' => ['<','!DOCTYPE',' html','>'],
             'html' => ['<','html ','0','>','1','<','/','html','>'],
             'head' => ['<','head','>','1','<','/','head','>'],
+            'meta' => ['<','meta ','0','/','>'],
             'title' => ['<','title','>','1','<','/','title','>'],
             'body' => ['<','body ','0','>','1','<','/','body','>']
         ];
@@ -22,7 +23,8 @@ if(!function_exists('data_base_emulation_atributos')) {
             "h" => "href=",
             "s" => "src=",
             "d" => "defer",
-            "cr" => "crossorigin="
+            "cr" => "crossorigin=",
+            "ch" => "charset="
         ];
     }
 }
@@ -52,6 +54,22 @@ if(!function_exists('head')) {
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
         $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
         $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
+    }
+}
+
+if(!function_exists('meta')) {
+    function meta(string $atributos = null , $cambiarNivel = false) {
+        $etiqueta = new App\QuieroCrearUnaEtiqueta('meta');
+        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
         echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
             $piezas , $atributosDeLaEtiqueta->crearAtributos(
                 $atributos , 
