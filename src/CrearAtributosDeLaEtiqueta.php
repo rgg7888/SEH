@@ -57,6 +57,15 @@ class CrearAtributosDeLaEtiqueta {
                 #array_push($arrayDeLaListaDeLasClavesYValoresPorAtributo,"recibi un array");
                 if($cambiarNivel){
                     #return "this is level 2 in the array section";
+                    $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
+                    $atributo = [];
+                    for($i = 0; $i < count($AtributosEnCrudo); $i++) {
+                        $atributo = [
+                            substr($AtributosEnCrudo[$i], 0 , 2),
+                            substr($AtributosEnCrudo[$i], 2 )
+                        ];
+                        array_push( $arrayDeLaListaDeLasClavesYValoresPorAtributo , $atributo );
+                    }
                 }else{
                     $arrayDeLaListaDeLasClavesYValoresPorAtributo = [];
                     $atributo = [];

@@ -36,6 +36,17 @@ class CrearAtributosDeLaEtiquetaTest extends TestCase {
             "d" => "defer",
             "cr" => "crossorigin="
         ]) );
+        $this->assertEquals( 'charset="utf-8"crossorigin="anonimous"' ,  $etiqueta->crearAtributos('chutf-8|cranonimous',[
+            "l" => "lang=",
+            "c" => "class=",
+            "i" => "id=",
+            "r" => "rel=",
+            "h" => "href=",
+            "s" => "src=",
+            "d" => "defer",
+            "cr" => "crossorigin=",
+            "ch" => "charset="
+        ],true) );
         $this->assertEquals( '' ,  $etiqueta->crearAtributos() );
         /*$this->assertEquals( 'this is level 2 in the string section' ,  
         $etiqueta->dividirAtributosIndividualmente($etiqueta->separarAtributos('cranonimous'),true) );
