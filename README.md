@@ -8,7 +8,7 @@ QUE LE SURJAN POR SU CUENTA
 La Version 0.0.3
 es la que tendra soporte y actualizaciones continuas
 <br>
-=)
+la documentacion oficial estara disponible muy pronto =)
 </pre>
 
 AQUI INICIA LA EXPLICACION PASO A PASO :
