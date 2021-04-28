@@ -133,8 +133,8 @@ if(!function_exists('pagina')) {
 if(!function_exists('head')) {
     function head($contenido = null) {
         $piezas = evalPiezas('head');
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return $piezasDeLaEtiqueta->unir($piezas);
+        $contenido = is_array($contenido) ? implode("",$contenido) : $contenido;
+        return $etiqueta = str_replace('#',$contenido.',',implode("",$piezas));
     }
 }
 
