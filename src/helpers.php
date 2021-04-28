@@ -3,8 +3,9 @@
 //@@@###@@@### -> Utileria
 
 if(!function_exists('conectar')) {
-    function conectar() {
-        
+    function conectar($datosDeConexion) {
+        $conectar = new App\TransaccionesYconexionesConLaBaseDeDatos($datosDeConexion);
+        return $conectar->conectar();
     }
 }
 
