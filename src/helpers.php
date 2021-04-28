@@ -123,7 +123,11 @@ if(!function_exists('h1')) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('h1');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
         $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        if($atributosDeLaEtiqueta->crearAtributos($contenido) === "") {
+        if($atributosDeLaEtiqueta->crearAtributos(
+            $contenido,
+            data_base_emulation_atributos(), 
+            $cambiarNivel
+        ) === "") {
             $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
             return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
                 $piezas , $atributosDeLaEtiqueta->crearAtributos(
