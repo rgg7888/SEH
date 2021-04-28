@@ -210,13 +210,14 @@ if(!function_exists('body')) {
     function body($contenido = null,string $atributos = null , $cambiarNivel = false) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('body');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-
-        //@@@@@@@#######@@@###@@##@##@@
-
-        return es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel);    
-
-        //@@@@@@@#######@@@###@@##@##@@
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();$piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
 
     }
 }
@@ -225,13 +226,14 @@ if(!function_exists('h1')) {
     function h1($contenido = null,string $atributos = null , $cambiarNivel = false) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('h1');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-
-        //@@@@@@@#######@@@###@@##@##@@
-
-        return es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel);    
-
-        //@@@@@@@#######@@@###@@##@##@@
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();$piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
 
     }
 }
