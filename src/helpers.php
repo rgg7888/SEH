@@ -33,10 +33,28 @@ if(!function_exists('data_base_emulation_atributos')) {
     }
 }
 
+if(!function_exists('runEvalOne')) {
+    function runEvalOne(
+        $atributosDeLaEtiqueta = null,
+        $piezas = null,
+        string $atributos = null,
+        $cambiarNivel = false
+    ) {
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
+    }
+}
+
 if(!function_exists('evalCadena')) {
     function evalCadena(
         $contenido = null,
-        string $atributos = null ,
+        string $atributos = null,
         $cambiarNivel = false,
         $piezas = null
     ) {
@@ -46,14 +64,12 @@ if(!function_exists('evalCadena')) {
             data_base_emulation_atributos(), 
             $cambiarNivel
         ) === "") {
-            $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-            return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-                $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                    $atributos , 
-                    data_base_emulation_atributos() , 
-                    $cambiarNivel 
-                ) 
-            ) );
+            return runEvalOne(
+                $atributosDeLaEtiqueta,
+                $piezas,
+                $atributos,
+                $cambiarNivel
+            );
         }else{
             $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
             return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
