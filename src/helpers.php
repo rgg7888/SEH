@@ -112,3 +112,19 @@ if(!function_exists('body')) {
         ) );
     }
 }
+
+if(!function_exists('h1')) {
+    function h1($contenido = null,string $atributos = null , $cambiarNivel = false) {
+        $etiqueta = new App\QuieroCrearUnaEtiqueta('h1');
+        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
+    }
+}
