@@ -34,7 +34,7 @@ if(!function_exists('data_base_emulation_atributos')) {
 }
 
 if(!function_exists('es_cadena_de_atributos')) {
-    function es_cadena_de_atributos($contenido,$piezasDeLaEtiqueta,$piezas,$atributosDeLaEtiqueta,$cambiarNivel) {
+    function es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel) {
         /**
              * habra ocasiones en las que estemos trabajando con 
              * javascript y el contenido de las etiquetas
