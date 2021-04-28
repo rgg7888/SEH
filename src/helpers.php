@@ -132,9 +132,7 @@ if(!function_exists('pagina')) {
 
 if(!function_exists('head')) {
     function head($contenido = null) {
-        $piezas = evalPiezas('head');
-        $contenido = is_array($contenido) ? implode("",$contenido) : $contenido;
-        return $etiqueta = str_replace('#',$contenido.',',implode("",$piezas));
+        return $piezas = evalPiezas('head');
     }
 }
 
