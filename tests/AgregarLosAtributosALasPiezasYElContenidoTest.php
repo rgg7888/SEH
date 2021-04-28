@@ -25,11 +25,20 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
             "d" => "defer",
             "cr" => "crossorigin="
         ]) ) );
-
-        $this->assertEquals( '<html lang="en">contenido</html>' ,  implode("", $piezasDeLaEtiqueta->unir( $etiqueta->listaDinamicaDeEtiquetasYpiezas([
-            'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','@','>','#','<','/','html','>']
-        ]) , $atributosDeLaEtiqueta->crearAtributos('len',[
+        $json = '{
+            "doctype": ["<","!DOCTYPE"," html",">"],
+            "html": ["<","html ","@",">","#","<","/","html",">"],
+            "head": ["<","head",">","#","<","/","head",">"],
+            "meta": ["<","meta ","@","/",">"],
+            "title": ["<","title",">","#","<","/","title",">"],
+            "body": ["<","body ","@",">","#","<","/","body",">"],
+            "h1": ["<","h1 ","@",">","#","<","/","h1",">"],
+            "br": ["<","br","/>"]
+        }';
+        $this->assertEquals( '<html lang="en">contenido</html>' ,  
+        implode("", $piezasDeLaEtiqueta->unir( 
+            $etiqueta->listaDinamicaDeEtiquetasYpiezas(json_decode($json,true)) , 
+            $atributosDeLaEtiqueta->crearAtributos('len',[
             "l" => "lang=",
             "c" => "class=",
             "i" => "id=",
