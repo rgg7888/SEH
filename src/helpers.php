@@ -134,7 +134,10 @@ if(!function_exists('head')) {
     function head($contenido = null) {
         $piezas = evalPiezas('head');
         return evalCadena(
-            $contenido
+            $contenido,
+            null,
+            null,
+            $piezas
         );
     }
 }
@@ -148,7 +151,8 @@ if(!function_exists('meta')) {
         return evalCadena(
             null,
             $atributos,
-            $cambiarNivel
+            $cambiarNivel,
+            $piezas
         );
     }
 }
@@ -157,7 +161,10 @@ if(!function_exists('title')) {
     function title($contenido = null) {
         $piezas = evalPiezas('title');
         return evalCadena(
-            $contenido
+            $contenido,
+            null,
+            null,
+            $piezas
         );
     }
 }
