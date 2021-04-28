@@ -1,3 +1,16 @@
+<pre>
+LA VERSION 0.0.1 Y 0.0.2 NO TIENEN SOPORTE
+SON LA IMPLEMENTACION INICIAL ASI QUE SI 
+TE DECIDES POR UTILIZAR ALGUNA DE ESTAS
+DOS VERSIONES TENDRA QUE REPARAR LOS BUGS
+QUE LE SURJAN POR SU CUENTA
+<br>
+La Version 0.0.3
+es la que tendra soporte y actualizaciones continuas
+<br>
+=)
+</pre>
+
 AQUI INICIA LA EXPLICACION PASO A PASO :
 
 primeramente la funcion doctype();
