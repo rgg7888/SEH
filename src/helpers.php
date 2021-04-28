@@ -134,7 +134,7 @@ if(!function_exists('head')) {
     function head($contenido = null) {
         $piezas = evalPiezas('head');
         $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return makeIt($piezasDeLaEtiqueta->unir($piezas));
+        return $piezasDeLaEtiqueta->unir($piezas);
     }
 }
 
