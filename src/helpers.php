@@ -4,11 +4,12 @@ if(!function_exists('data_base_emulation')) {
     function data_base_emulation() {
         return [
             'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>'],
-            'head' => ['<','head','>','1','<','/','head','>'],
-            'meta' => ['<','meta ','0','/','>'],
-            'title' => ['<','title','>','1','<','/','title','>'],
-            'body' => ['<','body ','0','>','1','<','/','body','>']
+            'html' => ['<','html ','@','>','#','<','/','html','>'],
+            'head' => ['<','head','>','#','<','/','head','>'],
+            'meta' => ['<','meta ','@','/','>'],
+            'title' => ['<','title','>','#','<','/','title','>'],
+            'body' => ['<','body ','@','>','#','<','/','body','>'],
+            'h1' => ['<','h1 ','@','>','#','<','/','h1','>']
         ];
     }
 }

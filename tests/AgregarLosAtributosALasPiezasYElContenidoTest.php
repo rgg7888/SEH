@@ -14,7 +14,7 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
 
         $this->assertIsArray( $piezasDeLaEtiqueta->unir( $etiqueta->listaDinamicaDeEtiquetasYpiezas([
             'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>']
+            'html' => ['<','html ','@','>','#','<','/','html','>']
         ]) , $atributosDeLaEtiqueta->crearAtributos('len',[
             "l" => "lang=",
             "c" => "class=",
@@ -28,7 +28,7 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
 
         $this->assertEquals( '<html lang="en">contenido</html>' ,  implode("", $piezasDeLaEtiqueta->unir( $etiqueta->listaDinamicaDeEtiquetasYpiezas([
             'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>']
+            'html' => ['<','html ','@','>','#','<','/','html','>']
         ]) , $atributosDeLaEtiqueta->crearAtributos('len',[
             "l" => "lang=",
             "c" => "class=",
@@ -50,8 +50,8 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
         $this->assertEquals( '<head>contenido</head>' ,  implode("", $piezasDeLaEtiqueta->unir( 
             $etiqueta->listaDinamicaDeEtiquetasYpiezas([
             'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>'],
-            'head' => ['<','head','>','1','<','/','head','>']
+            'html' => ['<','html ','@','>','#','<','/','html','>'],
+            'head' => ['<','head','>','#','<','/','head','>']
             ]) , $atributosDeLaEtiqueta->crearAtributos() 
         ) ) );
 
@@ -66,27 +66,9 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
         $this->assertEquals( '<title>contenido</title>' ,  implode("", $piezasDeLaEtiqueta->unir( 
             $etiqueta->listaDinamicaDeEtiquetasYpiezas([
             'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>'],
-            'head' => ['<','head','>','1','<','/','head','>'],
-            'title' => ['<','title','>','1','<','/','title','>']
-            ]) , $atributosDeLaEtiqueta->crearAtributos() 
-        ) ) );
-
-    }
-
-    public function test_unir_etiqueta_atributos_contenido_body() {
-
-        $etiqueta = new QuieroCrearUnaEtiqueta('body');
-        $atributosDeLaEtiqueta = new CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new AgregarLosAtributosALasPiezasYElContenido('contenido');
-
-        $this->assertEquals( '<body >contenido</body>' ,  implode("", $piezasDeLaEtiqueta->unir( 
-            $etiqueta->listaDinamicaDeEtiquetasYpiezas([
-            'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>'],
-            'head' => ['<','head','>','1','<','/','head','>'],
-            'title' => ['<','title','>','1','<','/','title','>'],
-            'body' => ['<','body ','0','>','1','<','/','body','>']
+            'html' => ['<','html ','@','>','#','<','/','html','>'],
+            'head' => ['<','head','>','#','<','/','head','>'],
+            'title' => ['<','title','>','#','<','/','title','>']
             ]) , $atributosDeLaEtiqueta->crearAtributos() 
         ) ) );
 
@@ -101,11 +83,11 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
         $this->assertEquals( '<meta charset="UTF-8"/>' ,  implode("", $piezasDeLaEtiqueta->unir( 
             $etiqueta->listaDinamicaDeEtiquetasYpiezas([
             'doctype' => ['<','!DOCTYPE',' html','>'],
-            'html' => ['<','html ','0','>','1','<','/','html','>'],
-            'head' => ['<','head','>','1','<','/','head','>'],
-            'meta' => ['<','meta ','0','/','>'],
-            'title' => ['<','title','>','1','<','/','title','>'],
-            'body' => ['<','body ','0','>','1','<','/','body','>']
+            'html' => ['<','html ','@','>','#','<','/','html','>'],
+            'head' => ['<','head','>','#','<','/','head','>'],
+            'meta' => ['<','meta ','@','/','>'],
+            'title' => ['<','title','>','#','<','/','title','>'],
+            'body' => ['<','body ','@','>','#','<','/','body','>']
             ]) , $atributosDeLaEtiqueta->crearAtributos('chUTF-8',[
                 "l" => "lang=",
                 "c" => "class=",
@@ -117,6 +99,43 @@ class AgregarLosAtributosALasPiezasYElContenidoTest extends TestCase {
                 "cr" => "crossorigin=",
                 "ch" => "charset="
             ],true) 
+        ) ) );
+
+    }
+
+    public function test_unir_etiqueta_atributos_contenido_body() {
+
+        $etiqueta = new QuieroCrearUnaEtiqueta('body');
+        $atributosDeLaEtiqueta = new CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new AgregarLosAtributosALasPiezasYElContenido('contenido');
+
+        $this->assertEquals( '<body >contenido</body>' ,  implode("", $piezasDeLaEtiqueta->unir( 
+            $etiqueta->listaDinamicaDeEtiquetasYpiezas([
+            'doctype' => ['<','!DOCTYPE',' html','>'],
+            'html' => ['<','html ','@','>','#','<','/','html','>'],
+            'head' => ['<','head','>','#','<','/','head','>'],
+            'title' => ['<','title','>','#','<','/','title','>'],
+            'body' => ['<','body ','@','>','#','<','/','body','>']
+            ]) , $atributosDeLaEtiqueta->crearAtributos() 
+        ) ) );
+
+    }
+
+    public function test_unir_etiqueta_atributos_contenido_h1() {
+
+        $etiqueta = new QuieroCrearUnaEtiqueta('h1');
+        $atributosDeLaEtiqueta = new CrearAtributosDeLaEtiqueta();
+        $piezasDeLaEtiqueta = new AgregarLosAtributosALasPiezasYElContenido('contenido');
+
+        $this->assertEquals( '<h1 >contenido</h1>' ,  implode("", $piezasDeLaEtiqueta->unir( 
+            $etiqueta->listaDinamicaDeEtiquetasYpiezas([
+            'doctype' => ['<','!DOCTYPE',' html','>'],
+            'html' => ['<','html ','@','>','#','<','/','html','>'],
+            'head' => ['<','head','>','#','<','/','head','>'],
+            'title' => ['<','title','>','#','<','/','title','>'],
+            'body' => ['<','body ','@','>','#','<','/','body','>'],
+            'h1' => ['<','h1 ','@','>','#','<','/','h1','>']
+            ]) , $atributosDeLaEtiqueta->crearAtributos() 
         ) ) );
 
     }
