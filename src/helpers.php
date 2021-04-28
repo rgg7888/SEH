@@ -34,7 +34,7 @@ if(!function_exists('data_base_emulation_atributos')) {
 }
 
 if(!function_exists('es_cadena_de_atributos')) {
-    function es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel) {
+    function es_cadena_de_atributos($contenido,$piezasDeLaEtiqueta,$piezas,$atributosDeLaEtiqueta,$cambiarNivel) {
         /**
              * habra ocasiones en las que estemos trabajando con 
              * javascript y el contenido de las etiquetas
@@ -81,9 +81,11 @@ if(!function_exists('es_cadena_de_atributos')) {
                  * entonces hacemos la comprobacion :
                  */
 
+                 #instanciamos a la clase CrearAtributosDeLaEtiqueta
+                 $esCadenaDeAtributos = new CrearAtributosDeLaEtiqueta();
 
-                if(is_array(dividirAtributosIndividualmente(
-                    separarAtributos($contenido)
+                if(is_array($esCadenaDeAtributos->dividirAtributosIndividualmente(
+                    $esCadenaDeAtributos->separarAtributos($contenido)
                 ))){
                     /**
                      * si es array entonces quiere decir
@@ -210,14 +212,13 @@ if(!function_exists('body')) {
     function body($contenido = null,string $atributos = null , $cambiarNivel = false) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('body');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();$piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
+
+        //@@@@@@@#######@@@###@@##@##@@
+
+        return es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel);    
+
+        //@@@@@@@#######@@@###@@##@##@@
 
     }
 }
@@ -226,15 +227,13 @@ if(!function_exists('h1')) {
     function h1($contenido = null,string $atributos = null , $cambiarNivel = false) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('h1');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();$piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
 
+        //@@@@@@@#######@@@###@@##@##@@
+
+        return es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel);    
+
+        //@@@@@@@#######@@@###@@##@##@@
     }
 }
 
