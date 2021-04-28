@@ -52,6 +52,24 @@ if(!function_exists('runEvalOne')) {
     }
 }
 
+if(!function_exists('runEvalTwo')) {
+    function runEvalTwo(
+        $atributosDeLaEtiqueta = null,
+        $piezas = null,
+        $cambiarNivel = false,
+        $contenido = null
+    ) {
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $contenido , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
+    }
+}
+
 if(!function_exists('evalCadena')) {
     function evalCadena(
         $contenido = null,
@@ -73,14 +91,12 @@ if(!function_exists('evalCadena')) {
                 $contenido
             );
         }else{
-            $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
-            return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-                $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                    $contenido , 
-                    data_base_emulation_atributos() , 
-                    $cambiarNivel 
-                ) 
-            ) );
+            return runEvalTwo(
+                $atributosDeLaEtiqueta,
+                $piezas,
+                $cambiarNivel,
+                $contenido
+            );
         }
     }
 }
