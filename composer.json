@@ -6,8 +6,7 @@
       "App\\": "src/"
     },
     "files": [
-      "src/helpers.php",
-      "src/configuracionDeLaBaseDeDatos/configuracionDeLaBaseDeDatos.php"
+      "src/helpers.php"
     ]
   },
   "minimum-stability": "dev",
