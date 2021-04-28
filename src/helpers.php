@@ -33,112 +33,6 @@ if(!function_exists('data_base_emulation_atributos')) {
     }
 }
 
-if(!function_exists('es_cadena_de_atributos')) {
-    function es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel) {
-        /**
-             * habra ocasiones en las que estemos trabajando con 
-             * javascript y el contenido de las etiquetas
-             * se lo agreguemos con javascript, entonces
-             * solo necesitaremos crear el tag con algun
-             * identificador ya sea una clase o un id
-             * 
-             * como observamos en la siguiente linea recibimos el 
-             * contenido, este puede ser un array o un string
-             * cuando es un array se asumira que se pasara directo
-             * al constructor de la clase : 
-             * AgregarLosAtributosALasPiezasYElContenido
-             * 
-             * pero cuando sea un string existe la posibilidad
-             * de que el usuario ingrese valores correspondientes
-             * a algun atributo, entonces antes de pasar la variabe
-             * contenido al constructor lo primero sera 
-             * verificar si es o no un string
-             */
-
-            //validamos si es un string
-            if(is_string($contenido)) {
-                /**
-                 * si entra a esta condicion 
-                 * quiere decir que si estamos 
-                 * recibiendo un string dentro
-                 * de la variable contenido
-                 * el siguiente paso es verificar
-                 * que este string no corresponda 
-                 * a una cadena de atributos.
-                 * 
-                 * para comprobar si lo que 
-                 * recibimos es simplemente un
-                 * string o una cadena de caracteres
-                 * vamos a utilizar la funcion :
-                 * dividirAtributosIndividualmente()
-                 * y la funcion :
-                 * separarAtributos()
-                 * 
-                 * estas funciones en caso de encontrar
-                 * alguna coincidencia devolveran un array
-                 * de lo contrario devolveran null 
-                 * 
-                 * entonces hacemos la comprobacion :
-                 */
-
-                 #instanciamos a la clase CrearAtributosDeLaEtiqueta
-                 $esCadenaDeAtributos = new CrearAtributosDeLaEtiqueta();
-
-                if(is_array($esCadenaDeAtributos->dividirAtributosIndividualmente(
-                    $esCadenaDeAtributos->separarAtributos($contenido)
-                ))){
-                    /**
-                     * si es array entonces quiere decir
-                     * que recibimos una cadena de 
-                     * atributos, por lo tanto el flujo
-                     * sera :
-                     * en el constructor lo dejaremos
-                     * vacio y en la funcion 
-                     * crearAtributos()
-                     * no le pasamos la variable atributos
-                     * en cambio le pasamos la variable 
-                     * contenido
-                     */
-                    $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
-                    return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-                        $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                            $contenido , 
-                            data_base_emulation_atributos() , 
-                            $cambiarNivel 
-                        ) 
-                    ) );
-                }else{
-                    /**
-                     * si no es un array continuamos
-                     * con el flujo normal
-                     */
-                    $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-                    return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-                        $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                            $atributos , 
-                            data_base_emulation_atributos() , 
-                            $cambiarNivel 
-                        ) 
-                    ) );
-                }
-
-            }else{
-                /**
-                 * si no es string tambien continuamos con el
-                 * flujo normal
-                 */
-                $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-                return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-                    $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                        $atributos , 
-                        data_base_emulation_atributos() , 
-                        $cambiarNivel 
-                    ) 
-                ) );
-            }
-    }
-}
-
 //@@@###@@@### -> Etiquetas
 
 if(!function_exists('pagina')) {
@@ -213,13 +107,14 @@ if(!function_exists('body')) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('body');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
         $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-
-        //@@@@@@@#######@@@###@@##@##@@
-
-        return es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel);    
-
-        //@@@@@@@#######@@@###@@##@##@@
-
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
     }
 }
 
@@ -228,12 +123,14 @@ if(!function_exists('h1')) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('h1');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
         $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-
-        //@@@@@@@#######@@@###@@##@##@@
-
-        return es_cadena_de_atributos($contenido,$piezas,$atributosDeLaEtiqueta,$cambiarNivel);    
-
-        //@@@@@@@#######@@@###@@##@##@@
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
     }
 }
 
