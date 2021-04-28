@@ -38,7 +38,8 @@ if(!function_exists('runEvalOne')) {
         $atributosDeLaEtiqueta = null,
         $piezas = null,
         string $atributos = null,
-        $cambiarNivel = false
+        $cambiarNivel = false,
+        $contenido = null
     ) {
         $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
         return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
@@ -68,7 +69,8 @@ if(!function_exists('evalCadena')) {
                 $atributosDeLaEtiqueta,
                 $piezas,
                 $atributos,
-                $cambiarNivel
+                $cambiarNivel,
+                $contenido
             );
         }else{
             $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
