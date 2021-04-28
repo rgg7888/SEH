@@ -133,12 +133,6 @@ if(!function_exists('pagina')) {
 if(!function_exists('head')) {
     function head($contenido = null) {
         $piezas = evalPiezas('head');
-        return evalCadena(
-            $contenido,
-            null,
-            false,
-            $piezas
-        );
     }
 }
 
