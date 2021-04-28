@@ -37,7 +37,7 @@ if(!function_exists('runEvalOne')) {
     function runEvalOne(
         $atributosDeLaEtiqueta = null,
         $piezas = null,
-        string $atributos = null,
+        $atributos = null,
         $cambiarNivel = false,
         $contenido = null
     ) {
@@ -80,7 +80,7 @@ if(!function_exists('evalPiezas')) {
 if(!function_exists('evalCadena')) {
     function evalCadena(
         $contenido = null,
-        string $atributos = null,
+        $atributos = null,
         $cambiarNivel = false,
         $piezas = null
     ) {
