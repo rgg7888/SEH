@@ -136,7 +136,7 @@ if(!function_exists('head')) {
         return evalCadena(
             $contenido,
             null,
-            null,
+            false,
             $piezas
         );
     }
