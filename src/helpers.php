@@ -132,7 +132,14 @@ if(!function_exists('pagina')) {
 
 if(!function_exists('head')) {
     function head($contenido = null) {
-        return $piezas = evalPiezas('head');
+        $piezas = evalPiezas('head');
+        return runEvalOne(
+            null,
+            $piezas,
+            null,
+            false,
+            $contenido
+        );
     }
 }
 
