@@ -133,13 +133,14 @@ if(!function_exists('pagina')) {
 if(!function_exists('head')) {
     function head($contenido = null) {
         $piezas = evalPiezas('head');
-        return runEvalOne(
-            null,
-            $piezas,
-            null,
-            false,
-            $contenido
-        );
+        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
+        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
+            $piezas , $atributosDeLaEtiqueta->crearAtributos(
+                $atributos , 
+                data_base_emulation_atributos() , 
+                $cambiarNivel 
+            ) 
+        ) );
     }
 }
 
