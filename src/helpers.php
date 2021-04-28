@@ -70,6 +70,13 @@ if(!function_exists('runEvalTwo')) {
     }
 }
 
+if(!function_exists('evalPiezas')) {
+    function evalPiezas(string $tag){
+        $etiqueta = new App\QuieroCrearUnaEtiqueta($tag);
+        return $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+    }
+}
+
 if(!function_exists('evalCadena')) {
     function evalCadena(
         $contenido = null,
@@ -101,95 +108,83 @@ if(!function_exists('evalCadena')) {
     }
 }
 
+if(!function_exists('makeIt')) {
+    function makeIt($piezas) {
+        return App\ConstruirPieza::ensamblar( $piezas );
+    }
+}
+
 //@@@###@@@### -> Etiquetas
 
 if(!function_exists('pagina')) {
     function pagina($contenido = null,string $atributos = null , $cambiarNivel = false) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('doctype');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        echo App\ConstruirPieza::ensamblar( $piezas );
-        $etiqueta->crearEtiqueta('html');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        echo App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+        $piezas = evalPiezas('doctype');
+        echo makeIt( $piezas );
+        $piezas = evalPiezas('html');
+        echo evalCadena(
+            $contenido,
+            $atributos,
+            $cambiarNivel,
+            $piezas
+        );
     }
 }
 
 if(!function_exists('head')) {
     function head($contenido = null) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('head');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+        $piezas = evalPiezas('head');
+        return evalCadena(
+            $contenido
+        );
     }
 }
 
 if(!function_exists('meta')) {
-    function meta(string $atributos = null , $cambiarNivel = false) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('meta');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido();
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+    function meta(
+        string $atributos = null,
+        $cambiarNivel = false
+    ) {
+        $piezas = evalPiezas('meta');
+        return evalCadena(
+            null,
+            $atributos,
+            $cambiarNivel
+        );
     }
 }
 
 if(!function_exists('title')) {
     function title($contenido = null) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('title');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+        $piezas = evalPiezas('title');
+        return evalCadena(
+            $contenido
+        );
     }
 }
 
 if(!function_exists('body')) {
-    function body($contenido = null,string $atributos = null , $cambiarNivel = false) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('body');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
-        ) );
+    function body(
+        $contenido = null,
+        string $atributos = null,
+        $cambiarNivel = false
+    ) {
+        $piezas = evalPiezas('body');
+        return evalCadena(
+            $contenido,
+            $atributos,
+            $cambiarNivel,
+            $piezas
+        );
     }
 }
 
 if(!function_exists('h1')) {
-    function h1($contenido = null,string $atributos = null , $cambiarNivel = false) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('h1');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+    function h1(
+        $contenido = null,
+        string $atributos = null,
+        $cambiarNivel = false
+    ) {
+        $piezas = evalPiezas('h1');
         return evalCadena(
             $contenido,
             $atributos,
@@ -201,8 +196,7 @@ if(!function_exists('h1')) {
 
 if(!function_exists('br')) {
     function br(){
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('br');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        echo App\ConstruirPieza::ensamblar( $piezas );
+        $piezas = evalPiezas('br');
+        return makeIt( $piezas );
     }
 }
