@@ -9,7 +9,8 @@ if(!function_exists('data_base_emulation')) {
             'meta' => ['<','meta ','@','/','>'],
             'title' => ['<','title','>','#','<','/','title','>'],
             'body' => ['<','body ','@','>','#','<','/','body','>'],
-            'h1' => ['<','h1 ','@','>','#','<','/','h1','>']
+            'h1' => ['<','h1 ','@','>','#','<','/','h1','>'],
+            'br' => ['<','br','/>']
         ];
     }
 }
@@ -126,5 +127,13 @@ if(!function_exists('h1')) {
                 $cambiarNivel 
             ) 
         ) );
+    }
+}
+
+if(!function_exists('br')) {
+    function br(){
+        $etiqueta = new App\QuieroCrearUnaEtiqueta('br');
+        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
+        echo App\ConstruirPieza::ensamblar( $piezas );
     }
 }
