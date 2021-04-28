@@ -11,6 +11,7 @@ class CrearAtributosDeLaEtiquetaTest extends TestCase {
         #$this->assertEquals( 'string' , $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len') )[0] );
         #$this->assertEquals( 'array' , $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len|imyId') )[0] );
         $this->assertIsArray( $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len') ) );
+        $this->assertNull( $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos() ) );
         #$this->assertEquals( 'recibi un string' , $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len') )[1] );
         #$this->assertEquals( 'recibi un array' , $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len|imyId') )[1] );
         $this->assertEquals( 'l' ,  $etiqueta->dividirAtributosIndividualmente( $etiqueta->separarAtributos('len') )[0][0] );
