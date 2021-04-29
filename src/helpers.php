@@ -86,11 +86,7 @@ if(!function_exists('head')) {
         $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
         $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
         return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas , $atributosDeLaEtiqueta->crearAtributos(
-                $atributos , 
-                data_base_emulation_atributos() , 
-                $cambiarNivel 
-            ) 
+            $piezas
         ) );
     }
 }
