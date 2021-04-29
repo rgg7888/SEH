@@ -83,11 +83,8 @@ if(!function_exists('head')) {
     function head($contenido = null) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('head');
         $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $atributosDeLaEtiqueta = new App\CrearAtributosDeLaEtiqueta();
-        $piezasDeLaEtiqueta = new App\AgregarLosAtributosALasPiezasYElContenido($contenido);
-        return App\ConstruirPieza::ensamblar( $piezasDeLaEtiqueta->unir( 
-            $piezas
-        ) );
+        $piezas[3] = is_array($contenido) ? implode("",$contenido) : $contenido;
+        return implode("",$piezas); 
     }
 }
 
