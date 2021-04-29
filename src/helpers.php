@@ -80,11 +80,9 @@ if(!function_exists('pagina')) {
 }
 
 if(!function_exists('head')) {
-    function head($contenido = null) {
-        $etiqueta = new App\QuieroCrearUnaEtiqueta('head');
-        $piezas = $etiqueta->listaDinamicaDeEtiquetasYpiezas(data_base_emulation());
-        $piezas[3] = is_array($contenido) ? implode("",$contenido) : $contenido;
-        return implode("",$piezas); 
+    function head ( $content = null ) {
+        $head = new App\Head(null, $func);
+        return $head->tag();
     }
 }
 
