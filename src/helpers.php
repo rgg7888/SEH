@@ -79,13 +79,6 @@ if(!function_exists('pagina')) {
     }
 }
 
-if(!function_exists('head')) {
-    function head ( $content = null ) {
-        $head = new App\Head(null, $func);
-        return $head->tag();
-    }
-}
-
 if(!function_exists('meta')) {
     function meta(string $atributos = null , $cambiarNivel = false) {
         $etiqueta = new App\QuieroCrearUnaEtiqueta('meta');
