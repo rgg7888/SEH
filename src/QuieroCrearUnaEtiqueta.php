@@ -18,25 +18,15 @@ class QuieroCrearUnaEtiqueta {
         return $this->etiqueta;
     }
 
-    public function construirEtiqueta($interior = null,$atributos = null) {
-        $documento = new \DOMDocument();
-        $contenido = is_array($interior) ? implode("",$interior) : $interior;
-        $etiqueta = $documento->createElement($this->obtenerEtiqueta(),$contenido);
-        $documento->appendChild($etiqueta);
-        if($atributos !== null) {#verifico si necesito agregarle atributos
-            $lista = explode("|",$atributos);#separo los atributos atributo:valor
-            $matriz = [];
-            foreach($lista as $atributo) {#itero el arreglo resultante y almaceno cada arreglo dentro de otro arreglo
-                array_push($matriz,explode(":",$atributo));
-            }
-            foreach($matriz as $atributoValor) {#itero la matriz para tomar el atributo y su valor
-                $etiqueta->setAttributeNode(new \DOMAttr($atributoValor[0], $atributoValor[1]));
-            }
-            return $documento->saveHTML();
-        }else{
-            return $documento->saveHTML();
-        }
-      
+    public function construirEtiqueta($innerHTMLDeLaEtiqueta = null,$atributos = null) {
+       /*
+	Escriba aqui su idea , descargue la version 0.0.1 y la version 0.0.2 
+	para que se de una idea de lo que este metodo debe hacer y escriba su 
+	version mejorada.
+
+	no olvide compartir su version para que la comunidad pueda utilizarlo
+	=)
+	*/
     }
 
 }
