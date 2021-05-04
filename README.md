@@ -1,3 +1,5 @@
+<a href="https://rgg7888.github.io/mentos.github.io/">Complementa la idea por tu cuenta</a>
+
 <pre>
 LA VERSION 0.0.1 Y 0.0.2 NO TIENEN SOPORTE
 SON LA IMPLEMENTACION INICIAL ASI QUE SI 
